@@ -1,0 +1,18 @@
+/************** color variables **************/
+$colour-primary: rgb(147, 86, 220);
+$colour-secondary: rgb(255, 121, 218);
+$colour-tertiary: rgb(153, 226, 208);
+$colour-white: rgb(255, 255, 255);
+$colour-black: rgb(20, 20, 20);
+
+/************** text variables **************/
+$heading-font: 'Shrikhand', sans-serif;
+$content-font: 'roboto', sans-serif;
+
+/************** spacing variables **************/
+$layout-margin: 1rem;
+$grid-gutter: $layout-margin * .25;
+
+/************** utility variables **************/
+$radius: 10px;
+$shadow: 0px 0px 5px 0px rgba(0,0,0,0.30);
