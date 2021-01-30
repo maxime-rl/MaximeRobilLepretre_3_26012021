@@ -1,0 +1,106 @@
+/************** section-localisation **************/
+.section-localisation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+}
+
+/************** section-explore-restaurants **************/
+.section-explore-restaurants {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  background-color: setcolor(grey,light);
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 2.8rem;
+    letter-spacing: -0.1rem;
+  }
+
+  p {
+    text-align: center;
+    margin: 0 0 1.6rem;
+  }
+}
+
+/************** section-tutorial **************/
+.section-tutorial {
+  background-color: white;
+  padding: 3.5rem 1.5rem;
+}
+
+.tutorial-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 1rem;
+
+  @include breakpoint(md) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 1.5rem;
+    grid-template-areas:
+        "tutorial-one tutorial-two tutorial-three";
+
+    .tutorial-card:nth-child(1) {
+      grid-area: tutorial-one;
+    }
+
+    .tutorial-card:nth-child(2) {
+      grid-area: tutorial-two;
+    }
+
+    .tutorial-card:nth-child(3) {
+      grid-area: tutorial-three;
+    }
+  }
+}
+
+/************** article-restaurants **************/
+.article-restaurants {
+  padding: 3.5rem 1.5rem;
+  background-color: setcolor(grey,light);
+
+  @include breakpoint(md) {
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 1.5rem;
+      grid-template-areas:
+          "one two"
+          "three four";
+    
+      @include breakpoint(xl) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "one two three four"
+      }
+
+      li:nth-child(1) {
+        grid-area: one;
+      }
+
+      li:nth-child(2) {
+        grid-area: two;
+      }
+
+      li:nth-child(3) {
+        grid-area: three;
+      }
+
+      li:nth-child(4) {
+        grid-area: four;
+      }
+    }
+  }
+}
+
+
+

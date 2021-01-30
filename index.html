@@ -1,26 +1,169 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<!-- Meta -->
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<meta name="description" content="Description ici" />
+  <head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Description ici" />
 
-		<!-- Author -->
-		<meta name="author" content="Maxime Robil-Leprêtre" />
+    <!-- Author -->
+    <meta name="author" content="Maxime Robil-Leprêtre" />
 
-		<!-- Page Title -->
-		<title>Oh my food</title>
+    <!-- Page Title -->
+    <title>Oh my food</title>
 
-		<!-- Fontawesome -->
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-		/>
+    <!-- Fontawesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
 
-		<!-- Stylesheets -->
-		<link rel="stylesheet" href="/public/css/style.css" />
-	</head>
-	<body></body>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/public/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo-link logo-link--black">ohmyfood</a>
+    </header>
+    <section class="section-localisation">
+      <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+      <p>Paris, Bellevile</p>
+    </section>
+    <section class="section-explore-restaurants">
+      <h2>Réservez le menu qui<br>vous convient</h2>
+      <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+      <a href="#article-restaurants">
+        <button class="btn">Explorer nos restaurants</button>
+      </a>
+    </section>
+    <section class="section-tutorial">
+        <h2>Fonctionnement</h2>
+        <ul class="tutorial-list">
+            <li class="tutorial-card">
+                <span class="tutorial-card__number">1</span>
+                <i class="fas fa-mobile-alt"></i>
+                <h4>Choisissez un restaurant</h4>
+            </li>
+            <li class="tutorial-card">
+                <span class="tutorial-card__number">2</span>
+                <i class="fas fa-list-ul"></i>
+                <h4>Choisissez un restaurant</h4>
+            </li>
+            <li class="tutorial-card">
+                <span class="tutorial-card__number">3</span>
+                <i class="fas fa-store"></i>
+                <h4>Choisissez un restaurant</h4>
+            </li>
+        </ul>
+    </section>
+    <article class="article-restaurants">
+        <h2>Restaurants</h2>
+        <ul class="article-restaurants__list">
+            <li>
+                <a href="pages/rest_menilmontant.html" class="card-container">
+                    <figure class="card-restaurant">
+                        <picture class="card-restaurant__img">
+                            <source
+                                srcset="public/img/menilmontant/menilmontant_desktop.jpg"
+                                media="(min-width: 991px)"
+                            />
+                            <img
+                                src="public/img/menilmontant/menilmontant_mobile.jpg"
+                                alt="Photo d'un plat du restaurant Ménilmontant"
+                            />
+                        </picture>
+                        <figcaption>
+                            <h3 class="menu-name">La palette du goût</h3>
+                            <p class="restaurant-name">Menilmontant</p>
+                            <i class="far fa-heart favorites-icon"></i>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="pages/rest_charonne.html" class="card-container">
+                    <figure class="card-restaurant">
+                        <picture class="card-restaurant__img">
+                            <source
+                                srcset="public/img/charonne/charonne_desktop.jpg"
+                                media="(min-width: 991px)"
+                            />
+                            <img
+                                src="public/img/charonne/charonne_mobile.jpg"
+                                alt="Photo d'un plat du restaurant Charonne"
+                            />
+                        </picture>
+                        <figcaption>
+                            <h3 class="menu-name">La note enchantée</h3>
+                            <p class="restaurant-name">Charonne</p>
+                            <i class="far fa-heart favorites-icon"></i>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="pages/rest_cite-rouge.html" class="card-container">
+                    <figure class="card-restaurant">
+                        <picture class="card-restaurant__img">
+                            <source
+                                srcset="public/img/cite-rouge/cite-rouge_desktop.jpg"
+                                media="(min-width: 991px)"
+                            />
+                            <img
+                                src="public/img/cite-rouge/cite-rouge_mobile.jpg"
+                                alt="Photo d'un plat du restaurant Cité Rouge"
+                            />
+                        </picture>
+                        <figcaption>
+                            <h3 class="menu-name">À la Française</h3>
+                            <p class="restaurant-name">Cité Rouge</p>
+                            <i class="far fa-heart favorites-icon"></i>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="pages/rest_folie-mericourt.html" class="card-container">
+                    <figure class="card-restaurant">
+                        <picture class="card-restaurant__img">
+                            <source
+                                srcset="
+                                    public/img/folie-mericourt/folie-mericourt_desktop.jpg
+                                "
+                                media="(min-width: 991px)"
+                            />
+                            <img
+                                src="public/img/folie-mericourt/folie-mericourt_mobile.jpg"
+                                alt="Photo d'un plat du restaurant Méricourt"
+                            />
+                        </picture>
+                        <figcaption>
+                            <h3 class="menu-name">Le délice des sens</h3>
+                            <p class="restaurant-name">Folie-Méricourt</p>
+                            <i class="far fa-heart favorites-icon"></i>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+        </ul>
+    </article>
+    <footer>
+        <a href="index.html" class="logo-link logo-link--white">ohmyfood</a>
+        <ul>
+            <li>
+                <a href="#"><i class="fas fa-utensils icon-suggest"></i>Proposez un restaurant</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-hands-helping icon-partnership"></i>Devenir partenaire</a>
+            </li>
+            <li>
+                <a href="#">Mentions légales</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </footer>
+  </body>
 </html>
