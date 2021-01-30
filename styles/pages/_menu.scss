@@ -1,0 +1,82 @@
+/************** section-menu-restaurant **************/
+.section-menu-restaurant {
+  position: relative;
+  bottom: 5rem;
+  padding: 3.2rem 1.5rem 7rem 1.5rem;
+  border-radius: 40px 40px 0 0;
+  background-color: setcolor(grey,light);
+
+  h1 {
+    display: flex;
+    justify-content: space-between;
+    font-family: $heading-font;
+    font-size: 2.5rem;
+  }
+}
+
+.list-menu {
+
+  @include breakpoint(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1.5rem;
+
+    li:nth-child(1) {
+      grid-column: 1/2;
+    }
+
+    li:nth-child(2) {
+      grid-column: 2/4;
+    }
+
+    li:nth-child(3) {
+      grid-column: 1/4;
+    }
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: repeat(3, 1fr);
+
+    li:nth-child(1) {
+      grid-column: 1/2;
+    }
+
+    li:nth-child(2) {
+      grid-column: 2/3;
+    }
+
+    li:nth-child(3) {
+      grid-column: 3/4;
+    }
+  }
+}
+
+.part-menu {
+  padding: $verti-padding;
+
+  h2 {
+    position: relative;
+    margin: 1rem 0 2.5rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: setcolor(grey, dark);
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 4rem;
+      height: 0.35rem;
+      left: 1px;
+      top: 22px;
+      background-color: $color-tertiary;
+    }
+  }
+}
+
+.order-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
