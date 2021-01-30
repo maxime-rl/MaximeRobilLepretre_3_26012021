@@ -23,7 +23,7 @@ $breakpoints: (
 
 
 /************** Spacing **************/
-@mixin security-wrapper {
+@mixin large-security-wrapper {
   max-width: $layout-wrapper;
   margin: $layout-margin;
 }
@@ -50,4 +50,11 @@ $breakpoints: (
   @include breakpoint(lg) {
     left: -3rem;
   }
+}
+
+/************** hide-text **************/
+@mixin hide-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

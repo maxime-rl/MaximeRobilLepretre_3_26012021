@@ -3,10 +3,5 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  box-shadow: 0 1px 10px 0 #c4c4c4;
-
-  img {
-      width: 16rem;
-  }
+  background-color: setcolor(grey,base);
 }

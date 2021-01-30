@@ -1,15 +1,37 @@
+/************** section-photo-menu **************/
+.section-photo-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  picture {
+    width: 100%;
+
+    .photo-menu {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint(md) {
+    max-height: 70vh;
+  }
+}
+
+
 /************** section-menu-restaurant **************/
 .section-menu-restaurant {
   position: relative;
   bottom: 5rem;
-  padding: 3.2rem 1.5rem 7rem 1.5rem;
-  border-radius: 40px 40px 0 0;
+  padding: 3.2rem 1.5rem 2.7rem 1.5rem;
+  border-radius: 35px 35px 0 0;
   background-color: setcolor(grey,light);
 
   h1 {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-family: $heading-font;
+    padding: 0 2.5rem 0 0;
     font-size: 2.5rem;
   }
 }
@@ -57,7 +79,7 @@
 
   h2 {
     position: relative;
-    margin: 1rem 0 2.5rem;
+    margin: 1rem 0 3.5rem;
     font-size: 1.6rem;
     text-transform: uppercase;
     font-weight: 400;
@@ -69,7 +91,7 @@
       width: 4rem;
       height: 0.35rem;
       left: 1px;
-      top: 22px;
+      top: 23px;
       background-color: $color-tertiary;
     }
   }

@@ -362,9 +362,9 @@ body {
   font-size: 1.6rem;
   color: $color-text;
   font-family: $content-font;
+  background-color: setcolor(grey,light);
   scroll-behavior: smooth;
-  background-color: setcolor(grey,base);
-  @include security-wrapper;
+  @include large-security-wrapper;
 }
 
 h1,
