@@ -6,6 +6,7 @@
 /************** Breakpoints **************/
 /************** Spacing **************/
 /************** number tutorial card **************/
+/************** hide-text **************/
 @font-face {
   font-family: "Roboto";
   src: url("../../public/font/roboto/Roboto-Bold.eot");
@@ -382,9 +383,9 @@ body {
   font-size: 1.6rem;
   color: #141414;
   font-family: "Roboto", sans-serif;
+  background-color: #f6f6f6;
   scroll-behavior: smooth;
-  background-color: #eaeaea;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -580,14 +581,12 @@ img {
   grid-area: restaurant;
   margin: 0.5rem 0;
 }
-.card-restaurant figcaption .favorites-icon {
+.card-restaurant figcaption .container-favorites-icon {
   grid-area: favorites;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-size: 2.5rem;
   padding: 0.5rem;
-  color: #9356dc;
 }
 
 /************** card-menu **************/
@@ -602,12 +601,15 @@ img {
   border-radius: 15px;
   background-color: white;
   box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  cursor: pointer;
 }
 .card-menu .card-menu__title {
   grid-area: title;
-  display: flex;
-  align-items: center;
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @media (min-width: 991px) {
   .card-menu .card-menu__title {
@@ -617,6 +619,9 @@ img {
 .card-menu .card-menu__details {
   grid-area: details;
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @media (min-width: 991px) {
   .card-menu .card-menu__details {
@@ -632,16 +637,63 @@ img {
   font-weight: 700;
 }
 
+.part-menu .card-menu:nth-child(2) {
+  animation: appear 1s forwards;
+  animation-delay: 0.2s;
+}
+.part-menu .card-menu:nth-child(3) {
+  animation: appear 1s forwards;
+  animation-delay: 0.4s;
+}
+.part-menu .card-menu:nth-child(4) {
+  animation: appear 1s forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+}
 .btn {
   border: none;
+  cursor: pointer;
   color: white;
   padding: 1.5rem;
   border-radius: 25px;
-  background: linear-gradient(170deg, #ff79da, #9356dc);
+  background: linear-gradient(170deg, #ff7ad9, #9256dc);
   box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 .btn--large {
   padding: 1.5rem 5rem;
+}
+.btn:hover {
+  background: linear-gradient(170deg, #ff94e1, #a06be1);
+  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+i.favorites-icon {
+  font-size: 2.2rem;
+  font-weight: 400;
+  cursor: pointer;
+  color: #363636;
+  transition: all 0.3s ease-in-out;
+}
+i.favorites-icon:active {
+  font-weight: 900;
+  color: #9256dc;
+}
+@media (min-width: 768px) {
+  i.favorites-icon:hover {
+    font-weight: 900;
+    color: #9256dc;
+  }
 }
 
 .logo-link {
@@ -660,17 +712,25 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  box-shadow: 0 1px 10px 0 #c4c4c4;
-}
-header img {
-  width: 16rem;
+  background-color: #eaeaea;
 }
 
 nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 6rem;
+  padding: 0 1.5rem;
+  background-color: white;
+  box-shadow: 0 1px 10px 0 #c4c4c4;
+}
+nav .back-link {
   position: absolute;
   left: 0;
-  padding: 0 1.5rem;
+  padding-left: 1.5rem;
 }
 
 footer {
@@ -733,6 +793,7 @@ footer .icon-partnership {
   height: 5rem;
   font-size: 1.3rem;
   font-weight: 700;
+  background-color: #eaeaea;
   color: #363636;
 }
 .section-localisation .icon-localisation {
@@ -832,18 +893,38 @@ footer .icon-partnership {
   }
 }
 
+/************** section-photo-menu **************/
+.section-photo-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-photo-menu picture {
+  width: 100%;
+}
+.section-photo-menu picture .photo-menu {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .section-photo-menu {
+    max-height: 70vh;
+  }
+}
+
 /************** section-menu-restaurant **************/
 .section-menu-restaurant {
   position: relative;
   bottom: 5rem;
-  padding: 3.2rem 1.5rem 7rem 1.5rem;
-  border-radius: 40px 40px 0 0;
+  padding: 3.2rem 1.5rem 2.7rem 1.5rem;
+  border-radius: 35px 35px 0 0;
   background-color: #f6f6f6;
 }
 .section-menu-restaurant h1 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-family: "Shrikhand", sans-serif;
+  padding: 0 2.5rem 0 0;
   font-size: 2.5rem;
 }
 
@@ -884,7 +965,7 @@ footer .icon-partnership {
 }
 .part-menu h2 {
   position: relative;
-  margin: 1rem 0 2.5rem;
+  margin: 1rem 0 3.5rem;
   font-size: 1.6rem;
   text-transform: uppercase;
   font-weight: 400;
@@ -896,8 +977,8 @@ footer .icon-partnership {
   width: 4rem;
   height: 0.35rem;
   left: 1px;
-  top: 22px;
-  background-color: #99e2d0;
+  top: 23px;
+  background-color: #98e2cf;
 }
 
 .order-menu {
