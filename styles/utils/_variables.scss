@@ -1,18 +1,22 @@
 /************** color variables **************/
-$colour-primary: rgb(147, 86, 220);
-$colour-secondary: rgb(255, 121, 218);
-$colour-tertiary: rgb(153, 226, 208);
-$colour-white: rgb(255, 255, 255);
-$colour-black: rgb(20, 20, 20);
+$color-primary: rgb(147, 86, 220);
+$color-secondary: rgb(255, 121, 218);
+$color-tertiary: rgb(153, 226, 208);
+$color-white: rgb(255, 255, 255);
+$color-text: rgb(20, 20, 20);
+/* shades of grey in css function */
 
 /************** text variables **************/
 $heading-font: 'Shrikhand', sans-serif;
-$content-font: 'roboto', sans-serif;
+$content-font: 'Roboto', sans-serif;
 
 /************** spacing variables **************/
-$layout-margin: 1rem;
-$grid-gutter: $layout-margin * .25;
+$layout-wrapper: 1200px;
+$layout-margin: 0 auto;
+$all-padding: 1.5rem;
+$horiz-padding: 0 1.5rem;
+$verti-padding: 1.5rem 0;
 
 /************** utility variables **************/
 $radius: 10px;
-$shadow: 0px 0px 5px 0px rgba(0,0,0,0.30);
+$shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);

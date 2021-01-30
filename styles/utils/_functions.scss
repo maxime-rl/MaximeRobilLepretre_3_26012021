@@ -1,0 +1,16 @@
+// Map for shades of grey or other shades of colors
+$colors: (
+  grey: (
+    base: rgb(234, 234, 234),
+    light: rgb(246, 246, 246),
+    semi-dark: rgb(119, 119, 119),
+    dark: rgb(54, 54, 54)
+  )
+);
+
+// Fonction setcolor
+// Use ex: setcolor(grey,light)
+@function setcolor($scheme, $tone: base) {
+  @return map-get(map-get($colors, $scheme), $tone);
+}
+

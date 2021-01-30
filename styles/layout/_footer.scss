@@ -1,0 +1,45 @@
+footer {
+  background-color: setcolor(grey,dark);
+  padding: $all-padding;
+
+ .logo-link {
+    font-size: 1.8rem;
+ }
+
+ a {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    color: $color-white;
+    }
+  
+  .icon-suggest {
+    padding-right: 1.2rem;
+  }
+
+  .icon-partnership {
+    padding-right: 1.1rem;
+    font-size: 1rem;
+  }
+
+  @include breakpoint(sm) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    ul {
+      text-align: center;
+    }
+  }
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    justify-content: center;
+
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: start;
+    }
+  }
+}
