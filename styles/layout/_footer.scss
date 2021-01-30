@@ -26,20 +26,32 @@ footer {
     flex-direction: column;
     align-items: center;
 
-    ul {
+    .footer-list {
       text-align: center;
     }
   }
 
   @include breakpoint(md) {
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        ". logo ."
+        ". list .";
 
-    ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: start;
+    .logo-link {
+      grid-area: logo;
+      text-align: center;
     }
+
+    .footer-list {
+      grid-area: list;
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+  @include breakpoint(lg) {
+    padding: 1.5rem 13rem;
   }
 }

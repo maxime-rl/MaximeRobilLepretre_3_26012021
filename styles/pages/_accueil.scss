@@ -4,6 +4,14 @@
   justify-content: center;
   align-items: center;
   height: 5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: setcolor(grey, dark);
+  
+  .icon-localisation {
+    padding-right: $all-padding;
+    padding-bottom: 0.45rem;
+  }
 }
 
 /************** section-explore-restaurants **************/
@@ -12,7 +20,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2.5rem;
+  padding: 3.5rem 2.5rem 4rem 2.5rem;
   background-color: setcolor(grey,light);
 
   h2 {
@@ -24,7 +32,8 @@
 
   p {
     text-align: center;
-    margin: 0 0 1.6rem;
+    margin: 1rem 0 1.5rem;
+    color: setcolor(grey, semi-dark);
   }
 }
 
@@ -34,7 +43,7 @@
   padding: 3.5rem 1.5rem;
 }
 
-.tutorial-list {
+.list-tutorial {
   display: flex;
   flex-direction: column;
   padding: 0 0 0 1rem;
@@ -47,15 +56,15 @@
     grid-template-areas:
         "tutorial-one tutorial-two tutorial-three";
 
-    .tutorial-card:nth-child(1) {
+    .card-tutorial:nth-child(1) {
       grid-area: tutorial-one;
     }
 
-    .tutorial-card:nth-child(2) {
+    .card-tutorial:nth-child(2) {
       grid-area: tutorial-two;
     }
 
-    .tutorial-card:nth-child(3) {
+    .card-tutorial:nth-child(3) {
       grid-area: tutorial-three;
     }
   }

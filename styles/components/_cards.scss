@@ -1,39 +1,42 @@
-.tutorial-card {
+/************** card-tutorial **************/
+.card-tutorial {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   margin: 1rem 0;
-  border-radius: 20px;
+  border-radius: $radius-tuto-card;
   padding: 1.5rem 0;
   cursor: pointer;
   background-color: setcolor(grey,light);
   box-shadow: 0px 6px 10px 0px rgb(0 0 0 / 10%);
-
-  &__number {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    left: 15px;
-    border-radius: 50%;
-    background-color: $color-primary;
-    color: $color-white;
-    font-size: 1.2rem;
-  }
 
   i {
     color: setcolor(grey,semi-dark);
   }
 }
 
+.card-tutorial:nth-child(1)::before {
+  @include number-tuto-card;
+  content: "1";
+}
+
+.card-tutorial:nth-child(2)::before {
+  @include number-tuto-card;
+  content: "2";
+}
+
+.card-tutorial:nth-child(3)::before {
+  @include number-tuto-card;
+  content: "3";
+}
+
+/************** card-restaurant **************/
 .card-container {
   display: flex;
   overflow: hidden;
   height: 25rem;
   margin: 1.5rem 0;
-  border-radius: 15px;
+  border-radius: $radius-rest-card;
   box-shadow: 0px 5px 5px 0px rgb(0 0 0 / 10%);
 }
 
@@ -49,7 +52,7 @@
     overflow: hidden;
     width: 100%;
     min-height: 60%;
-    border-radius: 15px 15px 0 0;
+    border-radius: $radius-rest-img-card;
 
     img {
       position: absolute;
@@ -91,6 +94,51 @@
       padding: 0.5rem;
       color: $color-primary;
     }
+  }
+}
+
+/************** card-menu **************/
+.card-menu {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  row-gap: 0.8rem;
+  grid-template-areas:
+      "title title title title title price"
+      "details details details details details price";
+  padding: 1.5rem 0.5rem 1.5rem 1rem;
+  margin: 1.5rem 0;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0px 6px 10px 0px rgb(0 0 0 / 10%);
+
+  .card-menu__title {
+    grid-area: title;
+    display: flex;
+    align-items: center;
+    margin: 0;
+
+    @include breakpoint(lg) {
+      font-size: 1.6rem;
+    }
+  }
+
+  .card-menu__details {
+    grid-area: details;
+    margin: 0;
+
+    @include breakpoint(lg) {
+      font-size: 1.4rem;
+    }
+  }
+
+  .card-menu__price {
+    grid-area: price;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0;
+    font-weight: 700;
   }
 }
 

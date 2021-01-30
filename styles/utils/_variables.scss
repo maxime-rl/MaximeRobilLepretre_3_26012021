@@ -18,5 +18,10 @@ $horiz-padding: 0 1.5rem;
 $verti-padding: 1.5rem 0;
 
 /************** utility variables **************/
-$radius: 10px;
-$shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+$radius-button: 25px;
+$radius-tuto-card: 20px;
+$radius-rest-card: 15px;
+$radius-rest-img-card: 15px 15px 0 0;
+$shadow-card: 0px 5px 5px 0px rgb(0 0 0 / 10%);
+$shadow-button: 0px 6px 10px 0px rgb(0 0 0 / 10%);
+$gradient: linear-gradient(170deg, $color-secondary, $color-primary);

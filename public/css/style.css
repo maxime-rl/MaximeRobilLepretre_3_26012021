@@ -5,6 +5,7 @@
 /************** utility variables **************/
 /************** Breakpoints **************/
 /************** Spacing **************/
+/************** number tutorial card **************/
 @font-face {
   font-family: "Roboto";
   src: url("../../public/font/roboto/Roboto-Bold.eot");
@@ -397,6 +398,15 @@ h6 {
   margin: 1rem 0;
 }
 
+h3 {
+  font-size: 1.8rem;
+  letter-spacing: -0.05rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
 ul {
   padding: 0;
   list-style: none;
@@ -427,7 +437,8 @@ img {
   object-fit: contain;
 }
 
-.tutorial-card {
+/************** card-tutorial **************/
+.card-tutorial {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -438,23 +449,89 @@ img {
   background-color: #f6f6f6;
   box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.1);
 }
-.tutorial-card__number {
+.card-tutorial i {
+  color: #777777;
+}
+
+.card-tutorial:nth-child(1)::before {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 20px;
   height: 20px;
-  left: 15px;
   border-radius: 50%;
   background-color: #9356dc;
   color: white;
   font-size: 1.2rem;
+  left: 1.5rem;
+  content: "1";
 }
-.tutorial-card i {
-  color: #777777;
+@media (min-width: 768px) {
+  .card-tutorial:nth-child(1)::before {
+    position: relative;
+    left: -1.5rem;
+  }
+}
+@media (min-width: 991px) {
+  .card-tutorial:nth-child(1)::before {
+    left: -3rem;
+  }
 }
 
+.card-tutorial:nth-child(2)::before {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #9356dc;
+  color: white;
+  font-size: 1.2rem;
+  left: 1.5rem;
+  content: "2";
+}
+@media (min-width: 768px) {
+  .card-tutorial:nth-child(2)::before {
+    position: relative;
+    left: -1.5rem;
+  }
+}
+@media (min-width: 991px) {
+  .card-tutorial:nth-child(2)::before {
+    left: -3rem;
+  }
+}
+
+.card-tutorial:nth-child(3)::before {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #9356dc;
+  color: white;
+  font-size: 1.2rem;
+  left: 1.5rem;
+  content: "3";
+}
+@media (min-width: 768px) {
+  .card-tutorial:nth-child(3)::before {
+    position: relative;
+    left: -1.5rem;
+  }
+}
+@media (min-width: 991px) {
+  .card-tutorial:nth-child(3)::before {
+    left: -3rem;
+  }
+}
+
+/************** card-restaurant **************/
 .card-container {
   display: flex;
   overflow: hidden;
@@ -513,6 +590,60 @@ img {
   color: #9356dc;
 }
 
+/************** card-menu **************/
+.card-menu {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  row-gap: 0.8rem;
+  grid-template-areas: "title title title title title price" "details details details details details price";
+  padding: 1.5rem 0.5rem 1.5rem 1rem;
+  margin: 1.5rem 0;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.card-menu .card-menu__title {
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+@media (min-width: 991px) {
+  .card-menu .card-menu__title {
+    font-size: 1.6rem;
+  }
+}
+.card-menu .card-menu__details {
+  grid-area: details;
+  margin: 0;
+}
+@media (min-width: 991px) {
+  .card-menu .card-menu__details {
+    font-size: 1.4rem;
+  }
+}
+.card-menu .card-menu__price {
+  grid-area: price;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0;
+  font-weight: 700;
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 25px;
+  background: linear-gradient(170deg, #ff79da, #9356dc);
+  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.btn--large {
+  padding: 1.5rem 5rem;
+}
+
 .logo-link {
   font-family: "Shrikhand", sans-serif;
   font-size: 2.5rem;
@@ -567,20 +698,30 @@ footer .icon-partnership {
     flex-direction: column;
     align-items: center;
   }
-  footer ul {
+  footer .footer-list {
     text-align: center;
   }
 }
 @media (min-width: 768px) {
   footer {
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+    grid-template-areas: ". logo ." ". list .";
   }
-  footer ul {
+  footer .logo-link {
+    grid-area: logo;
+    text-align: center;
+  }
+  footer .footer-list {
+    grid-area: list;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: start;
+    justify-content: space-evenly;
+  }
+}
+@media (min-width: 991px) {
+  footer {
+    padding: 1.5rem 13rem;
   }
 }
 
@@ -590,6 +731,13 @@ footer .icon-partnership {
   justify-content: center;
   align-items: center;
   height: 5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #363636;
+}
+.section-localisation .icon-localisation {
+  padding-right: 1.5rem;
+  padding-bottom: 0.45rem;
 }
 
 /************** section-explore-restaurants **************/
@@ -598,7 +746,7 @@ footer .icon-partnership {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2.5rem;
+  padding: 3.5rem 2.5rem 4rem 2.5rem;
   background-color: #f6f6f6;
 }
 .section-explore-restaurants h2 {
@@ -609,7 +757,8 @@ footer .icon-partnership {
 }
 .section-explore-restaurants p {
   text-align: center;
-  margin: 0 0 1.6rem;
+  margin: 1rem 0 1.5rem;
+  color: #777777;
 }
 
 /************** section-tutorial **************/
@@ -618,26 +767,26 @@ footer .icon-partnership {
   padding: 3.5rem 1.5rem;
 }
 
-.tutorial-list {
+.list-tutorial {
   display: flex;
   flex-direction: column;
   padding: 0 0 0 1rem;
 }
 @media (min-width: 768px) {
-  .tutorial-list {
+  .list-tutorial {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 1.5rem;
     grid-template-areas: "tutorial-one tutorial-two tutorial-three";
   }
-  .tutorial-list .tutorial-card:nth-child(1) {
+  .list-tutorial .card-tutorial:nth-child(1) {
     grid-area: tutorial-one;
   }
-  .tutorial-list .tutorial-card:nth-child(2) {
+  .list-tutorial .card-tutorial:nth-child(2) {
     grid-area: tutorial-two;
   }
-  .tutorial-list .tutorial-card:nth-child(3) {
+  .list-tutorial .card-tutorial:nth-child(3) {
     grid-area: tutorial-three;
   }
 }
@@ -681,6 +830,80 @@ footer .icon-partnership {
   .article-restaurants__list li:nth-child(4) {
     grid-area: four;
   }
+}
+
+/************** section-menu-restaurant **************/
+.section-menu-restaurant {
+  position: relative;
+  bottom: 5rem;
+  padding: 3.2rem 1.5rem 7rem 1.5rem;
+  border-radius: 40px 40px 0 0;
+  background-color: #f6f6f6;
+}
+.section-menu-restaurant h1 {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Shrikhand", sans-serif;
+  font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .list-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1.5rem;
+  }
+  .list-menu li:nth-child(1) {
+    grid-column: 1/2;
+  }
+  .list-menu li:nth-child(2) {
+    grid-column: 2/4;
+  }
+  .list-menu li:nth-child(3) {
+    grid-column: 1/4;
+  }
+}
+@media (min-width: 991px) {
+  .list-menu {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .list-menu li:nth-child(1) {
+    grid-column: 1/2;
+  }
+  .list-menu li:nth-child(2) {
+    grid-column: 2/3;
+  }
+  .list-menu li:nth-child(3) {
+    grid-column: 3/4;
+  }
+}
+
+.part-menu {
+  padding: 1.5rem 0;
+}
+.part-menu h2 {
+  position: relative;
+  margin: 1rem 0 2.5rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #363636;
+}
+.part-menu h2::after {
+  position: absolute;
+  content: "";
+  width: 4rem;
+  height: 0.35rem;
+  left: 1px;
+  top: 22px;
+  background-color: #99e2d0;
+}
+
+.order-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
