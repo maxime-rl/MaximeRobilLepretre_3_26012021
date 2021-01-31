@@ -37,7 +37,7 @@
   }
 }
 
-body {
+.block-scroll-loader {
   animation: no-scroll 5s ease-in-out;
   animation-duration: 5s;
 }
@@ -56,11 +56,11 @@ body {
 @keyframes charging-time {
   0% {
       opacity: 1;
-      overflow-y: hidden;
+      z-index: 999;
   }
   100% {
       opacity: 0;
-      overflow-y: auto;
+      z-index: -5;
   }
 }
 

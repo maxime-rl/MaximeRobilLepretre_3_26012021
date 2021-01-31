@@ -1,16 +1,23 @@
 footer {
   background-color: setcolor(grey,dark);
-  padding: $all-padding;
+  padding: 3rem 1.5rem 1.5rem;
 
  .logo-link {
     font-size: 1.8rem;
  }
 
- a {
+ .footer-list {
     font-size: 1.4rem;
     line-height: 2.5rem;
-    color: $color-white;
+    
+    a {
+      color: $color-white;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
+  }
   
   .icon-suggest {
     padding-right: 1.2rem;
@@ -52,6 +59,6 @@ footer {
   }
 
   @include breakpoint(lg) {
-    padding: 1.5rem 13rem;
+    padding: 3rem 13rem 1.5rem;
   }
 }
