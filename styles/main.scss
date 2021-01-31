@@ -1,11 +1,9 @@
 @import "./utils/variables";
 @import "./utils/functions";
 @import "./utils/mixins";
-@import "./utils/extensions";
 @import "./base/fonts";
 @import "./base/base";
 @import "./components/animations";
-@import "./components/cards";
 @import "./components/buttons";
 @import "./components/icons";
 @import "./components/logo";
@@ -13,10 +11,6 @@
 @import "./layout/nav";
 @import "./layout/footer";
 @import "./layout/container";
-@import "./layout/form";
 @import "./pages/accueil";
-@import "./pages/menu";
-@import "./pages/rest_charonne";
-@import "./pages/rest_cite-rouge";
-@import "./pages/rest_folie-mericourt";
-@import "./pages/rest_menilmontant";
+@import "./pages/rests-menu";
+

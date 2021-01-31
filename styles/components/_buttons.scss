@@ -10,11 +10,25 @@
 
   &--large {
     padding: 1.5rem 5rem;
+
+    &:hover {
+      background: $gradient-lighten;
+      box-shadow: $shadow-hover-button;
+    }
   }
 
   &:hover {
     background: $gradient-lighten;
     box-shadow: $shadow-hover-button;
+  }
+
+  &:active {
+    background: $gradient-darken;
+    box-shadow: none;
+  }
+
+  &:focus {
+    outline: 0;
   }
 }
 
