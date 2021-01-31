@@ -58,3 +58,10 @@ $breakpoints: (
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/************** shortcut flex layout **************/
+@mixin flex-center-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
