@@ -3,11 +3,14 @@
 /************** text variables **************/
 /************** spacing variables **************/
 /************** utility variables **************/
+/* radius */
+/* shadow */
+/* gradient */
 /************** Breakpoints **************/
-/************** Spacing **************/
 /************** number tutorial card **************/
 /************** hide-text **************/
 /************** shortcut flex layout **************/
+/************** transition and animation **************/
 @font-face {
   font-family: "Roboto";
   src: url("../../public/font/roboto/Roboto-Bold.eot");
@@ -380,14 +383,14 @@ html {
 body {
   margin: 0;
   padding: 0;
+  max-width: 1400px;
+  margin: 0 auto;
   line-height: 1.6rem;
   font-size: 1.6rem;
   color: #141414;
   font-family: "Roboto", sans-serif;
   background-color: #f6f6f6;
   scroll-behavior: smooth;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 h1,
@@ -400,13 +403,17 @@ h6 {
   margin: 1rem 0;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
 h3 {
   font-size: 1.8rem;
   letter-spacing: -0.05rem;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 ul {
@@ -446,12 +453,10 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
   width: 100%;
   height: 100%;
-  margin: auto;
   background-color: white;
-  animation: charging-time 0.5s forwards;
+  animation: end-loader 0.3s forwards;
   animation-delay: 2.5s;
 }
 .loader__circle {
@@ -479,27 +484,27 @@ img {
   animation-duration: 5s;
 }
 
-/* loader animation*/
+/* loader animation */
 @keyframes circle-jump {
   0% {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-15px);
+    transform: translateY(15px);
   }
 }
-/* for a good transition while, during, and after loader animation*/
-@keyframes charging-time {
+/* end of loader transition */
+@keyframes end-loader {
   0% {
+    width: 100%;
     opacity: 1;
-    z-index: 999;
   }
   100% {
+    width: 0;
     opacity: 0;
-    z-index: -5;
   }
 }
-/* block scroll during loader animation*/
+/* block scroll during loader animation */
 @keyframes no-scroll {
   0% {
     overflow-y: hidden;
@@ -511,7 +516,7 @@ img {
 /************** appearance of elements in the page display **************/
 @keyframes appear {
   0% {
-    transform: translateY(0%);
+    transform: translateY(0);
     opacity: 0;
   }
   100% {
@@ -557,22 +562,40 @@ img {
   outline: 0;
 }
 
-i.favorites-icon {
+.favorites-icon {
   font-size: 2.2rem;
   font-weight: 400;
   cursor: pointer;
   color: #363636;
   transition: all 0.3s ease-in-out;
 }
-i.favorites-icon:active {
+.favorites-icon:active {
   font-weight: 900;
   color: #9256dc;
 }
 @media (min-width: 768px) {
-  i.favorites-icon:hover {
+  .favorites-icon:hover {
     font-weight: 900;
     color: #9256dc;
   }
+}
+
+.new-restaurant-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 12px;
+  top: 12px;
+  width: 8rem;
+  height: 3rem;
+  border-radius: 2px;
+  background-color: #98e2cf;
+}
+.new-restaurant-badge::before {
+  content: "Nouveau";
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #278b72;
 }
 
 .logo-link {
@@ -698,14 +721,14 @@ footer .icon-partnership {
   padding: 3.5rem 2.5rem 4rem 2.5rem;
   background-color: #f6f6f6;
 }
-.section-explore-restaurants h2 {
+.section-explore-restaurants .title-ohmyfood {
   text-align: center;
-  font-size: 2.5rem;
   line-height: 2.8rem;
   letter-spacing: -0.1rem;
 }
-.section-explore-restaurants p {
+.section-explore-restaurants .description-ohmyfood {
   text-align: center;
+  line-height: 2rem;
   margin: 1rem 0 1.5rem;
   color: #777777;
 }
@@ -730,6 +753,7 @@ footer .icon-partnership {
     grid-template-rows: auto;
     gap: 1.5rem;
     grid-template-areas: "tutorial-one tutorial-two tutorial-three";
+    padding: 0;
   }
   .list-tutorial .card-tutorial:nth-child(1) {
     grid-area: tutorial-one;
@@ -744,18 +768,42 @@ footer .icon-partnership {
 
 /************** card-tutorial **************/
 .card-tutorial {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "one two two two";
   margin: 1rem 0;
-  border-radius: 20px;
   padding: 1.5rem 0;
-  cursor: pointer;
+  border-radius: 20px;
   background-color: #f6f6f6;
   box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.1);
 }
-.card-tutorial i {
+.card-tutorial__tutorial-icon {
+  grid-area: one;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
   color: #777777;
+}
+.card-tutorial__tutorial-icon--active {
+  color: #9256dc;
+}
+.card-tutorial__title {
+  grid-area: two;
+}
+@media (min-width: 576px) {
+  .card-tutorial {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "one two";
+  }
+}
+@media (min-width: 768px) {
+  .card-tutorial {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 }
 
 .card-tutorial:nth-child(1)::before {
@@ -763,24 +811,27 @@ footer .icon-partnership {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
+  left: 1.5rem;
+  margin-top: 0.6rem;
   border-radius: 50%;
-  background-color: #9356dc;
+  background-color: #9256dc;
   color: white;
   font-size: 1.2rem;
-  left: 1.5rem;
   content: "1";
 }
 @media (min-width: 768px) {
   .card-tutorial:nth-child(1)::before {
     position: relative;
     left: -1.5rem;
+    margin-top: 0;
   }
 }
 @media (min-width: 991px) {
   .card-tutorial:nth-child(1)::before {
-    left: -3rem;
+    left: -2.5rem;
+    margin-top: 0;
   }
 }
 
@@ -789,24 +840,27 @@ footer .icon-partnership {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
+  left: 1.5rem;
+  margin-top: 0.6rem;
   border-radius: 50%;
-  background-color: #9356dc;
+  background-color: #9256dc;
   color: white;
   font-size: 1.2rem;
-  left: 1.5rem;
   content: "2";
 }
 @media (min-width: 768px) {
   .card-tutorial:nth-child(2)::before {
     position: relative;
     left: -1.5rem;
+    margin-top: 0;
   }
 }
 @media (min-width: 991px) {
   .card-tutorial:nth-child(2)::before {
-    left: -3rem;
+    left: -2.5rem;
+    margin-top: 0;
   }
 }
 
@@ -815,24 +869,27 @@ footer .icon-partnership {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
+  left: 1.5rem;
+  margin-top: 0.6rem;
   border-radius: 50%;
-  background-color: #9356dc;
+  background-color: #9256dc;
   color: white;
   font-size: 1.2rem;
-  left: 1.5rem;
   content: "3";
 }
 @media (min-width: 768px) {
   .card-tutorial:nth-child(3)::before {
     position: relative;
     left: -1.5rem;
+    margin-top: 0;
   }
 }
 @media (min-width: 991px) {
   .card-tutorial:nth-child(3)::before {
-    left: -3rem;
+    left: -2.5rem;
+    margin-top: 0;
   }
 }
 
@@ -843,6 +900,9 @@ footer .icon-partnership {
   padding: 3.5rem 1.5rem;
   background-color: #f6f6f6;
 }
+.article-restaurants__list {
+  margin: 3rem 0 3rem 0;
+}
 @media (min-width: 768px) {
   .article-restaurants__list {
     display: grid;
@@ -850,6 +910,7 @@ footer .icon-partnership {
     grid-template-rows: auto;
     gap: 1.5rem;
     grid-template-areas: "one two" "three four";
+    margin: 1.3rem 0 3rem 0;
   }
 }
 @media (min-width: 768px) and (min-width: 1200px) {
@@ -890,6 +951,7 @@ footer .icon-partnership {
 }
 
 .card-restaurant {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -900,7 +962,6 @@ footer .icon-partnership {
   flex: 1.2;
   overflow: hidden;
   width: 100%;
-  min-height: 60%;
   border-radius: 15px 15px 0 0;
 }
 .card-restaurant__img img {
@@ -908,9 +969,9 @@ footer .icon-partnership {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  transform: scale(1);
-  filter: brightness(100%);
-  transition: transform 1.5s ease-in-out, filter 0.5s ease-in-out;
+}
+.card-restaurant .new-restaurant-badge {
+  position: absolute;
 }
 .card-restaurant figcaption {
   display: grid;
@@ -966,13 +1027,12 @@ footer .icon-partnership {
   border-radius: 35px 35px 0 0;
   background-color: #f6f6f6;
 }
-.section-menu-restaurant h1 {
+.section-menu-restaurant .title-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: "Shrikhand", sans-serif;
   padding: 0 2.5rem 0 0;
-  font-size: 2.5rem;
 }
 
 @media (min-width: 768px) {

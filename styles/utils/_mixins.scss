@@ -21,34 +21,28 @@ $breakpoints: (
   }
 }
 
-
-/************** Spacing **************/
-@mixin large-security-wrapper {
-  max-width: $layout-wrapper;
-  margin: $layout-margin;
-}
-
 /************** number tutorial card **************/
 @mixin number-tuto-card {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #9356dc;
-  color: white;
-  font-size: 1.2rem;
+  @include flex-center;
+  width: 21px;
+  height: 21px;
   left: 1.5rem;
+  margin-top: 0.6rem;
+  border-radius: 50%;
+  background-color: $color-primary;
+  color: $color-white;
+  font-size: 1.2rem;
 
   @include breakpoint(md) {
     position: relative;
     left: -1.5rem;
+    margin-top: 0;
   }
 
   @include breakpoint(lg) {
-    left: -3rem;
+    left: -2.5rem;
+    margin-top: 0;
   }
 }
 
@@ -60,8 +54,21 @@ $breakpoints: (
 }
 
 /************** shortcut flex layout **************/
-@mixin flex-center-all {
+@mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/************** transition and animation **************/
+@mixin rotate($rotation) {
+  @include transform(rotate($rotation));
+}
+
+@mixin translateY($transtate) {
+  @include transform(translateY($transtate));
+}
+
+@mixin transform($transform) {
+  transform: $transform;
 }

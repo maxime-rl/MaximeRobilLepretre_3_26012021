@@ -1,0 +1,16 @@
+.new-restaurant-badge {
+  @include flex-center;
+  right: 12px;
+  top: 12px;
+  width: 8rem;
+  height: 3rem;
+  border-radius: 2px;
+  background-color: $color-tertiary;
+
+  &::before {
+    content: 'Nouveau';
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $color-tertiary-darken;
+  }
+}
