@@ -1,4 +1,5 @@
 /************** color variables **************/
+
 $color-primary: hsl(267, 66%, 60%);
 $color-primary-lighten: hsl(267, 66%, 65%);
 $color-primary-darken: hsl(267, 66%, 55%);
@@ -6,15 +7,19 @@ $color-secondary: hsl(317, 100%, 74%);
 $color-secondary-lighten: hsl(317, 100%, 79%);
 $color-secondary-darken: hsl(317, 100%, 69%);
 $color-tertiary: hsl(165, 56%, 74%);
+$color-tertiary-lighten: hsl(165, 56%, 79%);
+$color-tertiary-darken: hsl(165, 56%, 35%);
 $color-white: hsl(0, 0%, 100%);
 $color-text: hsl(0, 0%, 8%);
 /* shades of grey in SASS function */
 
 /************** text variables **************/
+
 $heading-font: 'Shrikhand', sans-serif;
 $content-font: 'Roboto', sans-serif;
 
 /************** spacing variables **************/
+
 $layout-wrapper: 1400px;
 $layout-margin: 0 auto;
 $all-padding: 1.5rem;
@@ -22,13 +27,19 @@ $horiz-padding: 0 1.5rem;
 $verti-padding: 1.5rem 0;
 
 /************** utility variables **************/
+
+/* radius */
 $radius-button: 25px;
 $radius-tuto-card: 20px;
 $radius-rest-card: 15px;
 $radius-rest-img-card: 15px 15px 0 0;
+
+/* shadow */
 $shadow-card: 0px 5px 5px 0px rgb(0 0 0 / 10%);
 $shadow-button: 0px 6px 10px 0px rgb(0 0 0 / 10%);
 $shadow-hover-button: 0px 6px 10px 0px rgb(0 0 0 / 25%);
+
+/* gradient */
 $gradient: linear-gradient(170deg, $color-secondary, $color-primary);
 $gradient-lighten: linear-gradient(170deg, $color-secondary-lighten, $color-primary-lighten);
 $gradient-darken: linear-gradient(170deg, $color-secondary-darken, $color-primary-darken);
