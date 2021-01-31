@@ -7,6 +7,7 @@
 /************** Spacing **************/
 /************** number tutorial card **************/
 /************** hide-text **************/
+/************** shortcut flex layout **************/
 @font-face {
   font-family: "Roboto";
   src: url("../../public/font/roboto/Roboto-Bold.eot");
@@ -438,7 +439,7 @@ img {
   object-fit: contain;
 }
 
-/************** Loader **************/
+/************** loading at the top of the page **************/
 .loader {
   position: absolute;
   z-index: 999;
@@ -505,6 +506,26 @@ img {
   }
   100% {
     overflow-y: auto;
+  }
+}
+/************** appearance of elements in the page display **************/
+@keyframes appear {
+  0% {
+    transform: translateY(0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+}
+/************** rotate an element on itself **************/
+@keyframes rotate-on-itself {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 .btn {
@@ -671,9 +692,9 @@ footer .icon-partnership {
 /*********************************************************/
 .section-explore-restaurants {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: 3.5rem 2.5rem 4rem 2.5rem;
   background-color: #f6f6f6;
 }
@@ -1063,7 +1084,7 @@ footer .icon-partnership {
   align-items: center;
   overflow: hidden;
   width: 0;
-  background: linear-gradient(170deg, #98e2cf, #98e2cf);
+  background-color: #98e2cf;
   border-radius: 0 15px 15px 0;
   transition: width 0.5s ease-in-out;
 }
@@ -1073,6 +1094,9 @@ footer .icon-partnership {
 }
 .card-menu:hover .card-menu__select-product {
   width: 7rem;
+}
+.card-menu:hover .select-icon {
+  animation: rotate-on-itself 0.5s forwards;
 }
 
 .part-menu .card-menu:nth-child(2) {
@@ -1088,16 +1112,6 @@ footer .icon-partnership {
   animation-delay: 0.6s;
 }
 
-@keyframes appear {
-  0% {
-    transform: translateY(0%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(-10%);
-    opacity: 1;
-  }
-}
 /************** order-menu **************/
 .order-menu {
   display: flex;

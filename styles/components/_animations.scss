@@ -1,4 +1,4 @@
-/************** Loader **************/
+/************** loading at the top of the page **************/
 .loader {
   position: absolute;
   z-index: 999;
@@ -71,5 +71,31 @@
   }
   100% {
       overflow-y: auto;
+  }
+}
+
+/************** appearance of elements in the page display **************/
+
+@keyframes appear {
+  0% {
+    transform: translateY(0%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+}
+
+/************** rotate an element on itself **************/
+
+@keyframes rotate-on-itself {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }

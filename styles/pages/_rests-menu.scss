@@ -2,9 +2,7 @@
 /*************** section-photo-menu ***************/
 /**************************************************/
 .section-photo-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-all;
 
   picture {
     width: 100%;
@@ -150,12 +148,10 @@
 
   .card-menu__select-product {
     grid-area: select;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center-all;
     overflow: hidden;
     width: 0;
-    background: $gradient-tertiary;
+    background-color: $color-tertiary;
     border-radius: 0 15px 15px 0;
     transition: width 0.5s ease-in-out;
 
@@ -165,8 +161,14 @@
     }
   }
 
-  &:hover .card-menu__select-product {
-    width: 7rem;
+  &:hover {
+    .card-menu__select-product {
+      width: 7rem;
+    }
+
+    .select-icon {
+      animation: rotate-on-itself 0.5s forwards;
+    }
   }
 }
 
@@ -188,21 +190,7 @@
   }
 }
 
-@keyframes appear {
-  0% {
-    transform: translateY(0%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(-10%);
-    opacity: 1;
-  }
-}
-
 /************** order-menu **************/
 .order-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-all;
 }
