@@ -1,4 +1,6 @@
 .btn {
+  position: relative;
+  z-index: 1;
   border: none;
   cursor: pointer;
   color: $color-white;
@@ -6,24 +8,35 @@
   border-radius: $radius-button;
   background: $gradient;
   box-shadow: $shadow-button;
-  transition: all 0.3s ease-in-out;
 
-  &--large {
-    padding: 1.5rem 5rem;
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: $radius-button;
+    box-shadow: $shadow-button;
+    background: $gradient-lighten;
+    transition: all 0.3s ease-in-out;
+  }
 
-    &:hover {
-      background: $gradient-lighten;
+  &:hover {
+
+    &::after {
+      opacity: 1;
       box-shadow: $shadow-hover-button;
     }
   }
 
-  &:hover {
-    background: $gradient-lighten;
-    box-shadow: $shadow-hover-button;
+  &--large {
+    padding: 1.5rem 5rem;
   }
 
   &:active {
-    background: $gradient-darken;
     box-shadow: none;
   }
 
@@ -31,4 +44,3 @@
     outline: 0;
   }
 }
-
