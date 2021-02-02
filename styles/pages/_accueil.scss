@@ -3,8 +3,8 @@
 /**************************************************/
 .section-localisation {
   @include flex-center;
-  height: 5rem;
-  font-size: 1.3rem;
+  padding: $horiz-padding;
+  font-size: 1.5rem;
   font-weight: 700;
   background-color: setcolor(grey,base);
   color: setcolor(grey, dark);
@@ -177,7 +177,7 @@
 }
 
 /************** card-restaurant **************/
-.card-container {
+.link-restaurant {
   display: flex;
   overflow: hidden;
   height: 25rem;
@@ -212,7 +212,7 @@
     position: absolute;
   }
 
-  figcaption {
+  &__legend {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
@@ -222,17 +222,17 @@
     padding: 1.5rem;
     background-color: $color-white;
 
-    .menu-name {
+    &__menu-name {
       grid-area: menu;
       margin: 0.5rem 0;
     }
 
-    .restaurant-name {
+    &__restaurant-name {
       grid-area: restaurant;
       margin: 0.5rem 0;
     }
 
-    .container-favorites-icon {
+    &__content-fav-icon {
       grid-area: favorites;
       display: flex;
       justify-content: center;
