@@ -25,14 +25,14 @@
   bottom: 5rem;
   padding: 3.2rem 1.5rem 2.7rem 1.5rem;
   border-radius: 35px 35px 0 0;
-  background-color: setcolor(grey,light);
+  background-color: setcolor(grey, light);
 
   .title-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: $heading-font;
-    padding: 0 2.5rem 0 0;
+    padding: 0 1.5rem 0 0;
   }
 }
 
@@ -107,11 +107,12 @@
   grid-template-areas:
       "title title title title title price select"
       "details details details details details price select";
+  overflow: hidden;
   margin: 1.5rem 0;
   border-radius: 15px;
   opacity: 0;
   cursor: pointer;
-  box-shadow: 0px 6px 10px 0px rgb(0 0 0 / 10%);
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   background-color: white;
 
   &__title {
@@ -172,7 +173,6 @@
   }
 }
 
-
 .part-menu {
 
   .card-menu:nth-child(2) {
@@ -195,4 +195,3 @@
 .order-menu {
   @include flex-center;
 }
-

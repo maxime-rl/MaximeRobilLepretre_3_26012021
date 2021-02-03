@@ -1,18 +1,18 @@
 nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    left: 0;
-    width: 100%;
-    height: 6rem;
-    padding: 0 1.5rem;
-    background-color: $color-white;
-    box-shadow: 0 1px 10px 0 #c4c4c4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	left: 0;
+	width: 100%;
+	height: 6rem;
+	padding: 0 1.5rem;
+	background-color: $color-white;
+	box-shadow: 0 1px 10px 0 #c4c4c4;
 
-    .back-link {
-      position: absolute;
-      left: 0;
-      padding-left: 1.5rem;
-    }
+	.back-link {
+		position: absolute;
+		left: 0;
+		padding-left: 1.5rem;
+	}
 }
