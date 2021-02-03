@@ -1,4 +1,4 @@
-.favorites-icon {
+/*.favorites-icon {
   font-size: 2.2rem;
   font-weight: 400;
   cursor: pointer;
@@ -15,5 +15,42 @@
       font-weight: 900;
       color: $color-primary;
     }
+  }
+}*/
+
+#check-fav-icon,
+#check-fav-icon-2,
+#check-fav-icon-3,
+#check-fav-icon-4
+ {
+  display: none;
+}
+
+#check-fav-icon:checked + label > i::after,
+#check-fav-icon-2:checked + label > i::after,
+#check-fav-icon-3:checked + label > i::after,
+#check-fav-icon-4:checked + label > i::after {
+  color: $color-primary;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.fav-icon {
+  position: relative;
+  color: setcolor(grey, dark);
+  font-weight: 400;
+  font-size: 2.2rem;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    content: '\f004';
+    display: inline-block;
+    right: 0;
+    color: $color-primary;
+    opacity: 0;
+    font-style: normal;
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
   }
 }

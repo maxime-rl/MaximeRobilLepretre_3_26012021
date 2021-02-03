@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /************** color variables **************/
 /* shades of grey in SASS function */
 /************** text variables **************/
@@ -11,22 +12,58 @@
 /************** hide-text **************/
 /************** shortcut flex layout **************/
 /************** transition and animation **************/
-.favorites-icon {
+/*.favorites-icon {
   font-size: 2.2rem;
   font-weight: 400;
   cursor: pointer;
-  color: #363636;
+  color: setcolor(grey, dark);
   transition: all 0.3s ease-in-out;
-}
-.favorites-icon:active {
-  font-weight: 900;
-  color: #9256dc;
-}
-@media (min-width: 768px) {
-  .favorites-icon:hover {
+
+  &:active {
     font-weight: 900;
-    color: #9256dc;
+    color: $color-primary;
   }
+
+  @include breakpoint(md) {
+    &:hover {
+      font-weight: 900;
+      color: $color-primary;
+    }
+  }
+}*/
+#check-fav-icon,
+#check-fav-icon-2,
+#check-fav-icon-3,
+#check-fav-icon-4 {
+  display: none;
+}
+
+#check-fav-icon:checked + label > i::after,
+#check-fav-icon-2:checked + label > i::after,
+#check-fav-icon-3:checked + label > i::after,
+#check-fav-icon-4:checked + label > i::after {
+  color: #9256dc;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.fav-icon {
+  position: relative;
+  color: #363636;
+  font-weight: 400;
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+.fav-icon::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  right: 0;
+  color: #9256dc;
+  opacity: 0;
+  font-style: normal;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
 }
 
 @font-face {
@@ -401,7 +438,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
   line-height: 1.6rem;
   font-size: 1.6rem;
@@ -471,8 +508,9 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
   background-color: white;
   animation: end-loader 0.3s forwards;
   animation-delay: 2.5s;
@@ -1042,7 +1080,7 @@ footer .icon-partnership {
   justify-content: space-between;
   align-items: center;
   font-family: "Shrikhand", sans-serif;
-  padding: 0 2.5rem 0 0;
+  padding: 0 1.5rem 0 0;
 }
 
 @media (min-width: 768px) {
@@ -1105,11 +1143,12 @@ footer .icon-partnership {
   grid-template-rows: auto;
   row-gap: 0.8rem;
   grid-template-areas: "title title title title title price select" "details details details details details price select";
+  overflow: hidden;
   margin: 1.5rem 0;
   border-radius: 15px;
   opacity: 0;
   cursor: pointer;
-  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   background-color: white;
 }
 .card-menu__title {
