@@ -7,12 +7,15 @@
 /* radius */
 /* shadow */
 /* gradient */
+/************** colors **************/
+/* Map for shades of grey or other shades of colors */
+/* Fonction setcolor */
 /************** Breakpoints **************/
 /************** number tutorial card **************/
 /************** hide-text **************/
 /************** shortcut flex layout **************/
-/************** transitions **************/
-/* loader animation */
+/************** loader animation **************/
+/* circle animation */
 @keyframes circle-jump {
   0% {
     transform: translateY(0);
@@ -48,7 +51,7 @@
     opacity: 0;
   }
   100% {
-    transform: translateY(-10%);
+    transform: translateY(-15%);
     opacity: 1;
   }
 }
@@ -501,15 +504,11 @@ img {
   object-fit: cover;
 }
 
-.logo-link {
-  font-family: "Shrikhand", sans-serif;
-  font-size: 2.5rem;
+.logo {
+  width: 15rem;
 }
-.logo-link--black {
-  color: #141414;
-}
-.logo-link--white {
-  color: white;
+.logo--footer {
+  width: 9.5rem;
 }
 
 /************** loader home page **************/
@@ -648,26 +647,25 @@ img {
 }
 
 header {
-  height: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 6rem;
   background-color: #eaeaea;
 }
-
-nav {
+header nav {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  left: 0;
   width: 100%;
   height: 6rem;
+  left: 0;
   padding: 0 1.5rem;
   background-color: white;
   box-shadow: 0 1px 10px 0 #c4c4c4;
 }
-nav .back-link {
+header nav .back-link {
   position: absolute;
   left: 0;
   padding-left: 1.5rem;
@@ -676,9 +674,6 @@ nav .back-link {
 footer {
   background-color: #363636;
   padding: 3rem 1.5rem 1.5rem;
-}
-footer .logo-link {
-  font-size: 1.8rem;
 }
 footer .footer-list {
   font-size: 1.4rem;
@@ -714,7 +709,7 @@ footer .icon-partnership {
     grid-template-rows: auto;
     grid-template-areas: ". logo ." ". list .";
   }
-  footer .logo-link {
+  footer .logo {
     grid-area: logo;
     text-align: center;
   }
@@ -787,10 +782,10 @@ footer .icon-partnership {
 @media (min-width: 768px) {
   .list-tutorial {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     gap: 1.5rem;
-    grid-template-areas: "tutorial-one tutorial-two" "tutorial-three tutorial-three";
+    grid-template-areas: "tutorial-one tutorial-one tutorial-two tutorial-two" " . tutorial-three tutorial-three . ";
     padding: 0;
   }
   .list-tutorial .card-tutorial:nth-child(1) {
@@ -977,31 +972,23 @@ footer .icon-partnership {
     grid-template-areas: "one two" "three four";
     margin: 1.3rem 0 3rem 0;
   }
+  .article-restaurants__list li:nth-child(1) {
+    grid-area: one;
+  }
+  .article-restaurants__list li:nth-child(2) {
+    grid-area: two;
+  }
+  .article-restaurants__list li:nth-child(3) {
+    grid-area: three;
+  }
+  .article-restaurants__list li:nth-child(4) {
+    grid-area: four;
+  }
 }
 @media (min-width: 768px) and (min-width: 1200px) {
   .article-restaurants__list {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "one two three four";
-  }
-}
-@media (min-width: 768px) {
-  .article-restaurants__list li:nth-child(1) {
-    grid-area: one;
-  }
-}
-@media (min-width: 768px) {
-  .article-restaurants__list li:nth-child(2) {
-    grid-area: two;
-  }
-}
-@media (min-width: 768px) {
-  .article-restaurants__list li:nth-child(3) {
-    grid-area: three;
-  }
-}
-@media (min-width: 768px) {
-  .article-restaurants__list li:nth-child(4) {
-    grid-area: four;
   }
 }
 
@@ -1065,31 +1052,18 @@ footer .icon-partnership {
 /**************************************************/
 /*************** section-photo-menu ***************/
 /**************************************************/
-.section-photo-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.section-photo-menu picture {
+.photo-menu {
   width: 100%;
+  height: 30rem;
 }
-.section-photo-menu picture .photo-menu {
-  width: 100%;
-  max-height: 21rem;
-}
-@media (min-width: 768px) {
-  .section-photo-menu picture .photo-menu {
-    max-height: 28rem;
+@media (min-width: 576px) {
+  .photo-menu {
+    height: 35rem;
   }
 }
 @media (min-width: 991px) {
-  .section-photo-menu picture .photo-menu {
-    max-height: 35rem;
-  }
-}
-@media (min-width: 768px) {
-  .section-photo-menu {
-    max-height: 70vh;
+  .photo-menu {
+    height: 40rem;
   }
 }
 
@@ -1172,12 +1146,13 @@ footer .icon-partnership {
   row-gap: 0.8rem;
   grid-template-areas: "title title title title title price select" "details details details details details price select";
   overflow: hidden;
+  opacity: 0;
+  min-height: 7.5rem;
   margin: 1.5rem 0;
   border-radius: 15px;
-  opacity: 0;
-  cursor: pointer;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   background-color: white;
+  cursor: pointer;
 }
 .card-menu__title {
   grid-area: title;
@@ -1210,7 +1185,7 @@ footer .icon-partnership {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1.68rem 1.5rem;
   margin: 0;
   font-weight: 700;
 }
@@ -1236,19 +1211,22 @@ footer .icon-partnership {
   animation: rotate-on-itself 0.5s forwards;
 }
 
-.part-menu .card-menu:nth-child(2) {
+.card-menu:nth-child(2) {
   animation: appear 1s forwards;
   animation-delay: 0.2s;
 }
-.part-menu .card-menu:nth-child(3) {
+
+.card-menu:nth-child(3) {
   animation: appear 1s forwards;
   animation-delay: 0.4s;
 }
-.part-menu .card-menu:nth-child(4) {
+
+.card-menu:nth-child(4) {
   animation: appear 1s forwards;
   animation-delay: 0.6s;
 }
-.part-menu .card-menu:nth-child(5) {
+
+.card-menu:nth-child(5) {
   animation: appear 1s forwards;
   animation-delay: 0.8s;
 }

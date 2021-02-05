@@ -1,11 +1,13 @@
-/* loader animation */
+/************** loader animation **************/
+
+/* circle animation */
 @keyframes circle-jump {
   0% {
-    @include translateY(0);
+    transform: translateY(0);
   }
 
   100% {
-    @include translateY(15px);
+    transform: translateY(15px);
   }
 }
 
@@ -34,25 +36,27 @@
 }
 
 /************** appearance of elements in the page display **************/
+
 @keyframes appear {
   0% {
-    @include translateY(0);
+    transform: translateY(0);
     opacity: 0;
   }
 
   100% {
-    @include translateY(-10%);
+    transform: translateY(-15%);
     opacity: 1;
   }
 }
 
 /************** rotate an element on itself **************/
+
 @keyframes rotate-on-itself {
   0% {
-    @include rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
-    @include rotate(360deg);
+    transform: rotate(360deg);
   }
 }

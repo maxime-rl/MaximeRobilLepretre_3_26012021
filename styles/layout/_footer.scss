@@ -2,10 +2,6 @@ footer {
   background-color: setcolor(grey,dark);
   padding: 3rem 1.5rem 1.5rem;
 
- .logo-link {
-    font-size: 1.8rem;
- }
-
  .footer-list {
     font-size: 1.4rem;
     line-height: 2.5rem;
@@ -46,7 +42,7 @@ footer {
         ". logo ."
         ". list .";
 
-    .logo-link {
+    .logo {
       grid-area: logo;
       text-align: center;
     }
