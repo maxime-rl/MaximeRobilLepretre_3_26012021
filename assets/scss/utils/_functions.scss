@@ -15,4 +15,3 @@ $colors: (
 @function setcolor($scheme, $tone: base) {
   @return map-get(map-get($colors, $scheme), $tone);
 }
-

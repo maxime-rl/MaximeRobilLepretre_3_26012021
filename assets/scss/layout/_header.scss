@@ -1,7 +1,7 @@
 header {
   @include flex-center;
   height: 6rem;
-  background-color: setcolor(grey,base);
+  background-color: setcolor(grey, base);
 
   nav {
     @include flex-center;

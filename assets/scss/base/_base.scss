@@ -362,7 +362,7 @@ body {
   font-size: 1.6rem;
   color: $color-text;
   font-family: $content-font;
-  background-color: setcolor(grey,light);
+  background-color: setcolor(grey, light);
   scroll-behavior: smooth;
   /* large screen security wrapper */
   @include breakpoint(xl) {
