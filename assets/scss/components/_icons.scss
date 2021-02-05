@@ -14,15 +14,14 @@
     font-family: "Font Awesome 5 Free";
     font-style: normal;
     font-weight: 900;
-    color: $color-primary; 
+    color: $color-primary;
   }
 }
 
 #check-fav-icon,
 #check-fav-icon-2,
 #check-fav-icon-3,
-#check-fav-icon-4
- {
+#check-fav-icon-4 {
   display: none;
 }
 
@@ -35,5 +34,5 @@
   opacity: 1;
   color: $color-primary;
   transition: height 0.2s ease-in-out, opacity 0.2s ease-out;
-  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
 }
