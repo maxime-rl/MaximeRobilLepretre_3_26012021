@@ -1,0 +1,58 @@
+/* loader animation */
+@keyframes circle-jump {
+  0% {
+    @include translateY(0);
+  }
+
+  100% {
+    @include translateY(15px);
+  }
+}
+
+/* end of loader transition */
+@keyframes end-loader {
+  0% {
+      transform: scaleX(1);
+      opacity: 1;
+  }
+
+  100% {
+      transform: scaleX(0);
+      opacity: 0;
+  }
+}
+
+/* block scroll during loader animation */
+@keyframes no-scroll {
+  0% {
+      overflow-y: hidden;
+  }
+
+  100% {
+      overflow-y: auto;
+  }
+}
+
+/************** appearance of elements in the page display **************/
+@keyframes appear {
+  0% {
+    @include translateY(0);
+    opacity: 0;
+  }
+
+  100% {
+    @include translateY(-10%);
+    opacity: 1;
+  }
+}
+
+/************** rotate an element on itself **************/
+@keyframes rotate-on-itself {
+  0% {
+    @include rotate(0deg);
+  }
+
+  100% {
+    @include rotate(360deg);
+  }
+}

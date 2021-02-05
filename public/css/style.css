@@ -11,61 +11,56 @@
 /************** number tutorial card **************/
 /************** hide-text **************/
 /************** shortcut flex layout **************/
-/************** transition and animation **************/
-/*.favorites-icon {
-  font-size: 2.2rem;
-  font-weight: 400;
-  cursor: pointer;
-  color: setcolor(grey, dark);
-  transition: all 0.3s ease-in-out;
-
-  &:active {
-    font-weight: 900;
-    color: $color-primary;
+/************** transitions **************/
+/* loader animation */
+@keyframes circle-jump {
+  0% {
+    transform: translateY(0);
   }
-
-  @include breakpoint(md) {
-    &:hover {
-      font-weight: 900;
-      color: $color-primary;
-    }
+  100% {
+    transform: translateY(15px);
   }
-}*/
-#check-fav-icon,
-#check-fav-icon-2,
-#check-fav-icon-3,
-#check-fav-icon-4 {
-  display: none;
 }
-
-#check-fav-icon:checked + label > i::after,
-#check-fav-icon-2:checked + label > i::after,
-#check-fav-icon-3:checked + label > i::after,
-#check-fav-icon-4:checked + label > i::after {
-  color: #9256dc;
-  opacity: 1;
-  transition: all 0.2s ease-in-out;
+/* end of loader transition */
+@keyframes end-loader {
+  0% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
 }
-
-.fav-icon {
-  position: relative;
-  color: #363636;
-  font-weight: 400;
-  font-size: 2.2rem;
-  cursor: pointer;
+/* block scroll during loader animation */
+@keyframes no-scroll {
+  0% {
+    overflow-y: hidden;
+  }
+  100% {
+    overflow-y: auto;
+  }
 }
-.fav-icon::after {
-  position: absolute;
-  content: "";
-  display: inline-block;
-  right: 0;
-  color: #9256dc;
-  opacity: 0;
-  font-style: normal;
-  font-weight: 900;
-  font-family: "Font Awesome 5 Free";
+/************** appearance of elements in the page display **************/
+@keyframes appear {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
 }
-
+/************** rotate an element on itself **************/
+@keyframes rotate-on-itself {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @font-face {
   font-family: "Roboto";
   src: url("../../public/font/roboto/Roboto-Bold.eot");
@@ -438,14 +433,19 @@ html {
 body {
   margin: 0;
   padding: 0;
-  max-width: 1440px;
-  margin: 0 auto;
   line-height: 1.6rem;
   font-size: 1.6rem;
   color: #141414;
   font-family: "Roboto", sans-serif;
   background-color: #f6f6f6;
   scroll-behavior: smooth;
+  /* large screen security wrapper */
+}
+@media (min-width: 1200px) {
+  body {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
 }
 
 h1,
@@ -497,11 +497,28 @@ figcaption ul {
 img {
   max-width: 100%;
   height: auto;
-  -o-object-fit: contain;
-  object-fit: contain;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
-/************** loading at the top of the page **************/
+.logo-link {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 2.5rem;
+}
+.logo-link--black {
+  color: #141414;
+}
+.logo-link--white {
+  color: white;
+}
+
+/************** loader home page **************/
+/* class on body during loader to block scrolling */
+.block-scroll-loader {
+  animation: no-scroll 5s ease-in-out;
+  animation-duration: 5s;
+}
+
 .loader {
   position: absolute;
   z-index: 999;
@@ -535,60 +552,6 @@ img {
   animation: circle-jump 0.5s 0.4s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
 }
 
-.block-scroll-loader {
-  animation: no-scroll 5s ease-in-out;
-  animation-duration: 5s;
-}
-
-/* loader animation */
-@keyframes circle-jump {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(15px);
-  }
-}
-/* end of loader transition */
-@keyframes end-loader {
-  0% {
-    transform: scaleX(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scaleX(0);
-    opacity: 0;
-  }
-}
-/* block scroll during loader animation */
-@keyframes no-scroll {
-  0% {
-    overflow-y: hidden;
-  }
-  100% {
-    overflow-y: auto;
-  }
-}
-/************** appearance of elements in the page display **************/
-@keyframes appear {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(-10%);
-    opacity: 1;
-  }
-}
-/************** rotate an element on itself **************/
-@keyframes rotate-on-itself {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .btn {
   position: relative;
   z-index: 1;
@@ -598,7 +561,7 @@ img {
   padding: 1.5rem;
   border-radius: 25px;
   background: linear-gradient(170deg, #ff7ad9, #9256dc);
-  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
 .btn::after {
   content: "";
@@ -610,13 +573,13 @@ img {
   left: 0;
   opacity: 0;
   border-radius: 25px;
-  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   background: linear-gradient(170deg, #ff94e1, #a06be1);
   transition: all 0.3s ease-in-out;
 }
 .btn:hover::after {
   opacity: 1;
-  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.25);
 }
 .btn--large {
   padding: 1.5rem 5rem;
@@ -646,15 +609,42 @@ img {
   color: #278b72;
 }
 
-.logo-link {
-  font-family: "Shrikhand", sans-serif;
-  font-size: 2.5rem;
+.fav-icon {
+  position: relative;
+  color: #363636;
+  font-weight: 400;
+  font-size: 2.2rem;
+  cursor: pointer;
 }
-.logo-link--black {
-  color: #141414;
+.fav-icon::after {
+  position: absolute;
+  height: 0;
+  right: 0;
+  opacity: 0;
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  color: #9256dc;
 }
-.logo-link--white {
-  color: white;
+
+#check-fav-icon,
+#check-fav-icon-2,
+#check-fav-icon-3,
+#check-fav-icon-4 {
+  display: none;
+}
+
+#check-fav-icon:checked + label > i::after,
+#check-fav-icon-2:checked + label > i::after,
+#check-fav-icon-3:checked + label > i::after,
+#check-fav-icon-4:checked + label > i::after {
+  overflow: hidden;
+  height: 100%;
+  opacity: 1;
+  color: #9256dc;
+  transition: height 0.2s ease-in-out, opacity 0.2s ease-out;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
 }
 
 header {
@@ -797,6 +787,25 @@ footer .icon-partnership {
 @media (min-width: 768px) {
   .list-tutorial {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1.5rem;
+    grid-template-areas: "tutorial-one tutorial-two" "tutorial-three tutorial-three";
+    padding: 0;
+  }
+  .list-tutorial .card-tutorial:nth-child(1) {
+    grid-area: tutorial-one;
+  }
+  .list-tutorial .card-tutorial:nth-child(2) {
+    grid-area: tutorial-two;
+  }
+  .list-tutorial .card-tutorial:nth-child(3) {
+    grid-area: tutorial-three;
+  }
+}
+@media (min-width: 991px) {
+  .list-tutorial {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 1.5rem;
@@ -851,6 +860,14 @@ footer .icon-partnership {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+  }
+  .card-tutorial .card-tutorial:nth-child(3) {
+    padding: 1.5rem 17rem;
+  }
+}
+@media (min-width: 991px) {
+  .card-tutorial {
+    padding: 1.5rem 0;
   }
 }
 
@@ -1058,6 +1075,17 @@ footer .icon-partnership {
 }
 .section-photo-menu picture .photo-menu {
   width: 100%;
+  max-height: 21rem;
+}
+@media (min-width: 768px) {
+  .section-photo-menu picture .photo-menu {
+    max-height: 28rem;
+  }
+}
+@media (min-width: 991px) {
+  .section-photo-menu picture .photo-menu {
+    max-height: 35rem;
+  }
 }
 @media (min-width: 768px) {
   .section-photo-menu {
@@ -1070,7 +1098,7 @@ footer .icon-partnership {
 /*****************************************************/
 .section-menu-restaurant {
   position: relative;
-  bottom: 5rem;
+  bottom: 3.5rem;
   padding: 3.2rem 1.5rem 2.7rem 1.5rem;
   border-radius: 35px 35px 0 0;
   background-color: #f6f6f6;
@@ -1219,6 +1247,10 @@ footer .icon-partnership {
 .part-menu .card-menu:nth-child(4) {
   animation: appear 1s forwards;
   animation-delay: 0.6s;
+}
+.part-menu .card-menu:nth-child(5) {
+  animation: appear 1s forwards;
+  animation-delay: 0.8s;
 }
 
 /************** order-menu **************/

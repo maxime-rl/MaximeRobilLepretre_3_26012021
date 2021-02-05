@@ -9,6 +9,15 @@
 
     .photo-menu {
       width: 100%;
+      max-height: 21rem;
+
+      @include breakpoint(md) {
+        max-height: 28rem;
+      }
+
+      @include breakpoint(lg) {
+        max-height: 35rem;
+      }
     }
   }
 
@@ -22,7 +31,7 @@
 /*****************************************************/
 .section-menu-restaurant {
   position: relative;
-  bottom: 5rem;
+  bottom: 3.5rem;
   padding: 3.2rem 1.5rem 2.7rem 1.5rem;
   border-radius: 35px 35px 0 0;
   background-color: setcolor(grey, light);
@@ -188,6 +197,11 @@
   .card-menu:nth-child(4) {
     animation: appear 1s forwards;
     animation-delay: 0.6s;
+  }
+
+  .card-menu:nth-child(5) {
+    animation: appear 1s forwards;
+    animation-delay: 0.8s;
   }
 }
 
