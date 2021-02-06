@@ -7,9 +7,9 @@
 	padding: $horiz-padding;
 	font-size: 1.5rem;
 	font-weight: 700;
-	background-color: setcolor(grey,base);
+	background-color: setcolor(grey, base);
 	color: setcolor(grey, dark);
-	
+
 	.icon-localisation {
 		padding-right: $all-padding;
 		padding-bottom: 0.45rem;
@@ -23,7 +23,7 @@
 .section-explore-restaurants {
 	@include flex-center;
 	flex-direction: column;
-	padding: 3.5rem 2.5rem 4rem 2.5rem;
+	padding: 3rem 2.5rem 5rem 2.5rem;
 	background-color: setcolor(grey, light);
 
 	.title-ohmyfood {
@@ -35,7 +35,7 @@
 	.description-ohmyfood {
 		text-align: center;
 		line-height: 2rem;
-		margin: 1rem 0 1.5rem;
+		margin: 0 0 2.5rem;
 		color: setcolor(grey, semi-dark);
 	}
 }
@@ -92,25 +92,10 @@
 	}
 
   @include breakpoint(lg) {
-		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: auto;
 		gap: 1.5rem;
 		grid-template-areas:
 				"tutorial-one tutorial-two tutorial-three";
-		padding: 0;
-
-		.card-tutorial:nth-child(1) {
-			grid-area: tutorial-one;
-		}
-
-		.card-tutorial:nth-child(2) {
-			grid-area: tutorial-two;
-		}
-
-		.card-tutorial:nth-child(3) {
-			grid-area: tutorial-three;
-		}
 	}
 }
 
@@ -288,5 +273,3 @@
 		}
 	}
 }
-
-
