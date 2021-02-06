@@ -15,7 +15,6 @@
   }
 }
 
-
 /*****************************************************/
 /************** section-menu-restaurant **************/
 /*****************************************************/
@@ -37,7 +36,6 @@
 }
 
 .list-menu {
-
   @include breakpoint(md) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -193,7 +191,6 @@
   animation: appear 1s forwards;
   animation-delay: 0.8s;
 }
-
 
 /************** order-menu **************/
 
