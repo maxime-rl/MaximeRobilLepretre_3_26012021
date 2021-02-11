@@ -172,24 +172,8 @@
   }
 }
 
-.card-menu:nth-child(2) {
-  animation: appear 1s forwards;
-  animation-delay: 0.2s;
-}
-
-.card-menu:nth-child(3) {
-  animation: appear 1s forwards;
-  animation-delay: 0.4s;
-}
-
-.card-menu:nth-child(4) {
-  animation: appear 1s forwards;
-  animation-delay: 0.6s;
-}
-
-.card-menu:nth-child(5) {
-  animation: appear 1s forwards;
-  animation-delay: 0.8s;
+.card-menu {
+  @include appear-card-menu;
 }
 
 /************** order-menu **************/
