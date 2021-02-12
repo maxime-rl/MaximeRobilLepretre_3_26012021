@@ -228,6 +228,7 @@
 	height: 25rem;
 	margin: 1.5rem 0;
 	border-radius: $radius-rest-card;
+  background-color: $color-white;
 	box-shadow: 0 5px 5px 0 rgb(0 0 0 / 10%);
 }
 
@@ -260,8 +261,13 @@
 		grid-template-areas:
 				"link link link link link favorites"
 				"link link link link link favorites";
-		padding: 1.5rem;
+    padding: 1.1rem 1rem 1rem 1.5rem;
 		background-color: $color-white;
+
+    a {
+      display: flex;
+      flex-direction: column;
+    }
 
 		&__menu-name,
     &__restaurant-name {
