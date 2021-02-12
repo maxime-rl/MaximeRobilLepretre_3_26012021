@@ -1002,6 +1002,7 @@ footer .icon-partnership {
   height: 25rem;
   margin: 1.5rem 0;
   border-radius: 15px;
+  background-color: white;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -1028,8 +1029,12 @@ footer .icon-partnership {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
   grid-template-areas: "link link link link link favorites" "link link link link link favorites";
-  padding: 1.5rem;
+  padding: 1.1rem 1rem 1rem 1.5rem;
   background-color: white;
+}
+.card-restaurant__legend a {
+  display: flex;
+  flex-direction: column;
 }
 .card-restaurant__legend__menu-name, .card-restaurant__legend__restaurant-name {
   margin: 0.5rem 0;
