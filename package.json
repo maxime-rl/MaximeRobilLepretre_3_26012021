@@ -4,8 +4,8 @@
   "description": "p3_oc",
   "main": "index.html",
   "scripts": {
-    "sass": "sass --watch ./assets/scss/main.scss:./assets/styles/style.css",
-    "sass-min": "sass --watch ./assets/scss/main.scss:./assets/styles/style.min.css --style compressed",
+    "sass": "sass --watch ./assets/styles/scss/main.scss:./assets/styles/style.css",
+    "sass-min": "sass --watch ./assets/styles/scss/main.scss:./assets/styles/style.min.css --style compressed",
     "prefix": "postcss ./assets/styles/style.min.css --use autoprefixer -d ./assets/styles/"
   },
   "author": "maxime-rl",
