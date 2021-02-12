@@ -4,7 +4,7 @@
 
 .section-localisation {
 	@include flex-center;
-	padding: $horiz-padding;
+	padding: 0 1.5rem 0 0;
 	font-size: 1.5rem;
 	font-weight: 700;
 	background-color: setcolor(grey, base);
@@ -25,6 +25,7 @@
 	flex-direction: column;
 	padding: 3rem 2.5rem 5rem 2.5rem;
 	background-color: setcolor(grey, light);
+  @include security-wrapper;
 
 	.title-ohmyfood {
 		text-align: center;
@@ -48,6 +49,10 @@
 	background-color: white;
 	padding: 3.5rem 1.5rem;
 
+  h2 {
+    @include security-wrapper;
+  }
+
   @include breakpoint(md) {
 
     h2 {
@@ -61,12 +66,20 @@
       text-align: start;
     }
   }
+
+  @include breakpoint(xl) {
+
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+  }
 }
 
 .list-tutorial {
 	display: flex;
 	flex-direction: column;
 	padding: 0 0 0 1rem;
+  @include security-wrapper;
 
   @include breakpoint(md) {
 		display: grid;
@@ -167,6 +180,7 @@
 .article-restaurants {
 	padding: 3.5rem 1.5rem;
 	background-color: setcolor(grey, light);
+  @include security-wrapper;
 
 	&__list {
 		margin: 3rem 0 3rem 0;
@@ -209,8 +223,7 @@
 
 /************** card-restaurant **************/
 
-.link-restaurant {
-	display: flex;
+.restaurant {
 	overflow: hidden;
 	height: 25rem;
 	margin: 1.5rem 0;
@@ -220,20 +233,16 @@
 
 .card-restaurant {
 	position: relative;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
+  height: 17rem;
+
+  a {
+    grid-area: link;
+  }
 
 	&__img {
-		position: relative;
-		display: flex;
-		flex: 1.2;
-		overflow: hidden;
-		width: 100%;
 		border-radius: $radius-rest-img-card;
 
 		img {
-			position: absolute;
 			object-fit: cover;
 			width: 100%;
 			height: 100%;
@@ -249,18 +258,13 @@
 		grid-template-columns: repeat(6, 1fr);
 		grid-template-rows: auto;
 		grid-template-areas:
-				"menu menu menu menu menu favorites"
-				"restaurant restaurant restaurant restaurant restaurant favorites";
+				"link link link link link favorites"
+				"link link link link link favorites";
 		padding: 1.5rem;
 		background-color: $color-white;
 
-		&__menu-name {
-			grid-area: menu;
-			margin: 0.5rem 0;
-		}
-
-		&__restaurant-name {
-			grid-area: restaurant;
+		&__menu-name,
+    &__restaurant-name {
 			margin: 0.5rem 0;
 		}
 
