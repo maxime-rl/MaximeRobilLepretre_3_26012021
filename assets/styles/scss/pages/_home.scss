@@ -3,17 +3,17 @@
 /**************************************************/
 
 .section-localisation {
-	@include flex-center;
-	padding: 0 1.5rem 0 0;
-	font-size: 1.5rem;
-	font-weight: 700;
-	background-color: setcolor(grey, base);
-	color: setcolor(grey, dark);
+  @include flex-center;
+  padding: 0 1.5rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: setcolor(grey, base);
+  color: setcolor(grey, dark);
 
-	.icon-localisation {
-		padding-right: $all-padding;
-		padding-bottom: 0.45rem;
-	}
+  .icon-localisation {
+    padding-right: $all-padding;
+    padding-bottom: 0.45rem;
+  }
 }
 
 /*********************************************************/
@@ -21,24 +21,24 @@
 /*********************************************************/
 
 .section-explore-restaurants {
-	@include flex-center;
-	flex-direction: column;
-	padding: 3rem 2.5rem 5rem 2.5rem;
-	background-color: setcolor(grey, light);
+  @include flex-center;
+  flex-direction: column;
+  padding: 3rem 2.5rem 5rem 2.5rem;
+  background-color: setcolor(grey, light);
   @include security-wrapper;
 
-	.title-ohmyfood {
-		text-align: center;
-		line-height: 2.8rem;
-		letter-spacing: -0.1rem;
-	}
+  .title-ohmyfood {
+    text-align: center;
+    line-height: 2.8rem;
+    letter-spacing: -0.1rem;
+  }
 
-	.description-ohmyfood {
-		text-align: center;
-		line-height: 2rem;
-		margin: 0 0 2.5rem;
-		color: setcolor(grey, semi-dark);
-	}
+  .description-ohmyfood {
+    text-align: center;
+    margin: 0 0 2.5rem;
+    line-height: 2rem;
+    color: setcolor(grey, semi-dark);
+  }
 }
 
 /**************************************************/
@@ -46,8 +46,8 @@
 /**************************************************/
 
 .section-tutorial {
-	background-color: white;
-	padding: 3.5rem 1.5rem;
+  padding: 3.5rem 1.5rem;
+  background-color: $color-white;
 
   h2 {
     @include security-wrapper;
@@ -76,82 +76,77 @@
 }
 
 .list-tutorial {
-	display: flex;
-	flex-direction: column;
-	padding: 0 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 1rem;
   @include security-wrapper;
 
   @include breakpoint(md) {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		grid-template-rows: auto;
-		grid-template-areas:
-				" . tutorial-one tutorial-one . "
-        " . tutorial-two tutorial-two . "
-        " . tutorial-three tutorial-three . ";
-		padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: " . tutorial-one tutorial-one . " " . tutorial-two tutorial-two . " " . tutorial-three tutorial-three . ";
+    padding: 0;
 
-		.card-tutorial:nth-child(1) {
-			grid-area: tutorial-one;
-		}
+    .card-tutorial:nth-child(1) {
+      grid-area: tutorial-one;
+    }
 
-		.card-tutorial:nth-child(2) {
-			grid-area: tutorial-two;
-		}
+    .card-tutorial:nth-child(2) {
+      grid-area: tutorial-two;
+    }
 
-		.card-tutorial:nth-child(3) {
-			grid-area: tutorial-three;
-		}
-	}
+    .card-tutorial:nth-child(3) {
+      grid-area: tutorial-three;
+    }
+  }
 
   @include breakpoint(lg) {
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.5rem;
-		grid-template-areas:
-				"tutorial-one tutorial-two tutorial-three";
-	}
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    grid-template-areas: "tutorial-one tutorial-two tutorial-three";
+  }
 }
 
 /************** card-tutorial **************/
 
 .card-tutorial {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: auto;
-	grid-template-areas:
-			"one two two two";
-	margin: 1rem 0;
-	padding: 1.5rem 0;
-	border-radius: $radius-tuto-card;
-	background-color: setcolor(grey, light);
-	box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "one two two two";
+  margin: 1rem 0;
+  padding: 1.5rem 0;
+  border-radius: $radius-tuto-card;
+  background-color: setcolor(grey, light);
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
 
-		&__tutorial-icon {
-			grid-area: one;
-			@include flex-center;
-			font-size: 1.8rem;
-			color: setcolor(grey, semi-dark);
+    &__tutorial-icon {
+      grid-area: one;
+      @include flex-center;
+      font-size: 1.8rem;
+      color: setcolor(grey, semi-dark);
 
-			&--active {
-				color: $color-primary;
-			}
-		}
+      &--active {
+        color: $color-primary;
+      }
+    }
 
-		&__title {
-			grid-area: two;
-		}
+    &__title {
+      grid-area: two;
+    }
 
-		@include breakpoint(sm) {
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-areas:
-					"one two";
-		}
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+          "one two";
+    }
 
-		@include breakpoint(md) {
-			display: flex;
-			justify-content: space-evenly;
-			align-items: center;
-		}
+    @include breakpoint(md) {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
 
     @include breakpoint(lg) {
       padding: 1.5rem 0;
@@ -159,18 +154,18 @@
 }
 
 .card-tutorial:nth-child(1)::before {
-	@include number-tuto-card;
-	content: "1";
+  @include number-tuto-card;
+  content: "1";
 }
 
 .card-tutorial:nth-child(2)::before {
-	@include number-tuto-card;
-	content: "2";
+  @include number-tuto-card;
+  content: "2";
 }
 
 .card-tutorial:nth-child(3)::before {
-	@include number-tuto-card;
-	content: "3";
+  @include number-tuto-card;
+  content: "3";
 }
 
 /**************************************************/
@@ -178,108 +173,103 @@
 /**************************************************/
 
 .article-restaurants {
-	padding: 3.5rem 1.5rem;
-	background-color: setcolor(grey, light);
+  padding: 3.5rem 1.5rem;
+  background-color: setcolor(grey, light);
   @include security-wrapper;
 
-	&__list {
-		margin: 3rem 0 3rem 0;
+  &__list {
+    margin: 3rem 0 3rem 0;
 
-		@include breakpoint(md) {
+    @include breakpoint(md) {
 
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: auto;
-			gap: 1.5rem;
-			grid-template-areas:
-					"one two"
-					"three four";
-			margin: 1.3rem 0 3rem 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 1.5rem;
+      grid-template-areas: "one two" "three four";
+      margin: 1.3rem 0 3rem 0;
 
       li:nth-child(1) {
-				grid-area: one;
-			}
+        grid-area: one;
+      }
 
-			li:nth-child(2) {
-				grid-area: two;
-			}
+      li:nth-child(2) {
+        grid-area: two;
+      }
 
-			li:nth-child(3) {
-				grid-area: three;
-			}
+      li:nth-child(3) {
+        grid-area: three;
+      }
 
-			li:nth-child(4) {
-				grid-area: four;
-			}
+      li:nth-child(4) {
+        grid-area: four;
+      }
 
-			@include breakpoint(xl) {
-				grid-template-columns: repeat(4, 1fr);
-				grid-template-areas:
-						"one two three four";
-			}
-		}
-	}
+      @include breakpoint(xl) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "one two three four";
+      }
+    }
+  }
 }
 
 /************** card-restaurant **************/
 
 .restaurant {
-	overflow: hidden;
-	height: 25rem;
-	margin: 1.5rem 0;
-	border-radius: $radius-rest-card;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  height: 25rem;
+  border-radius: $radius-rest-card;
   background-color: $color-white;
-	box-shadow: 0 5px 5px 0 rgb(0 0 0 / 10%);
+  box-shadow: 0 5px 5px 0 rgb(0 0 0 / 10%);
 }
 
 .card-restaurant {
-	position: relative;
+  position: relative;
   height: 17rem;
 
   a {
     grid-area: link;
   }
 
-	&__img {
-		border-radius: $radius-rest-img-card;
+  &__img {
+    border-radius: $radius-rest-img-card;
 
-		img {
-			object-fit: cover;
-			width: 100%;
-			height: 100%;
-		}
-	}
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
 
-	.new-restaurant-badge {
-		position: absolute;
-	}
+  .new-restaurant-badge {
+    position: absolute;
+  }
 
-	&__legend {
-		display: grid;
-		grid-template-columns: repeat(6, 1fr);
-		grid-template-rows: auto;
-		grid-template-areas:
-				"link link link link link favorites"
-				"link link link link link favorites";
+  &__legend {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "link link link link link favorites" "link link link link link favorites";
     padding: 1.1rem 1rem 1rem 1.5rem;
-		background-color: $color-white;
+    background-color: $color-white;
 
     a {
       display: flex;
       flex-direction: column;
     }
 
-		&__menu-name,
+    &__menu-name,
     &__restaurant-name {
-			margin: 0.5rem 0;
-		}
+      margin: 0.5rem 0;
+    }
 
-		&__content-fav-icon {
-			grid-area: favorites;
-			display: flex;
-			justify-content: center;
-			align-items: flex-start;
-			padding: 0.5rem;
-		}
-	}
+    &__content-fav-icon {
+      grid-area: favorites;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0.5rem;
+    }
+  }
 }

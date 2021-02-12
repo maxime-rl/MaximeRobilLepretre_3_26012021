@@ -36,8 +36,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: $heading-font;
     padding: 0 1.5rem 0 0;
+    font-family: $heading-font;
   }
 }
 
@@ -56,10 +56,10 @@
     &::after {
       position: absolute;
       content: "";
+      top: 41px;
+      left: 1px;
       width: 4rem;
       height: 0.35rem;
-      left: 1px;
-      top: 41px;
       background-color: $color-tertiary;
     }
   }
@@ -111,13 +111,11 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
   row-gap: 0.8rem;
-  grid-template-areas:
-      "title title title title title price select"
-      "details details details details details price select";
+  grid-template-areas: "title title title title title price select" "details details details details details price select";
   overflow: hidden;
-  opacity: 0;
-  min-height: 7.5rem;
   margin: 1.5rem 0;
+  min-height: 7.5rem;
+  opacity: 0;
   border-radius: 15px;
   box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   background-color: white;
