@@ -23,34 +23,30 @@
 		<link rel="stylesheet" href="../assets/styles/style.min.css" />
 	</head>
 	<body>
-		<header>
-			<nav>
-				<a href="../index.html" class="back-link"
-					><i class="fas fa-arrow-left"></i
-				></a>
-				<a href="../index.html">
-					<img
-						class="logo"
-						src="../assets/img/logo/logo_ohmyfood.svg"
-						alt="logo ohmyfood"
-					/>
-				</a>
-			</nav>
+		<nav>
+			<a class="nav-links" href="../index.html">
+				<i class="fas fa-arrow-left back-link"></i>
+				<img
+					class="logo"
+					src="../assets/img/logo/logo_ohmyfood.svg"
+					alt="logo ohmyfood"
+				/>
+			</a>
+		</nav>
+		<header class="section-photo-menu">
+			<picture>
+				<source
+					srcset="../assets/img/menilmontant/menilmontant_desktop.jpg"
+					media="(min-width: 768px)"
+				/>
+				<img
+					src="../assets/img/menilmontant/menilmontant_mobile.jpg"
+					alt="Photo d'un plat du restaurant menilmontant"
+					class="photo-menu"
+				/>
+			</picture>
 		</header>
 		<main>
-			<section class="section-photo-menu">
-				<picture>
-					<source
-						srcset="../assets/img/menilmontant/menilmontant_desktop.jpg"
-						media="(min-width: 768px)"
-					/>
-					<img
-						src="../assets/img/menilmontant/menilmontant_mobile.jpg"
-						alt="Photo d'un plat du restaurant menilmontant"
-						class="photo-menu"
-					/>
-				</picture>
-			</section>
 			<section class="section-menu-restaurant">
 				<h1 class="title-menu">
 					La palette du goût
@@ -63,10 +59,8 @@
 				</h1>
 				<ul class="list-menu">
 					<li>
+						<h2 class="part-menu-title">Entrées</h2>
 						<ul class="part-menu">
-							<li>
-								<h2>Entrées</h2>
-							</li>
 							<li class="card-menu">
 								<h3 class="card-menu__title">Fricassée d'escargot</h3>
 								<p class="card-menu__details">Au piment d'Espelette</p>
@@ -96,10 +90,8 @@
 						</ul>
 					</li>
 					<li>
+						<h2 class="part-menu-title">Plats</h2>
 						<ul class="part-menu">
-							<li>
-								<h2>Plats</h2>
-							</li>
 							<li class="card-menu">
 								<h3 class="card-menu__title">Filet de boeuf aux herbes</h3>
 								<p class="card-menu__details">
@@ -131,10 +123,8 @@
 						</ul>
 					</li>
 					<li>
+						<h2 class="part-menu-title">Desserts</h2>
 						<ul class="part-menu">
-							<li>
-								<h2>Desserts</h2>
-							</li>
 							<li class="card-menu">
 								<h3 class="card-menu__title">Paris-Brest</h3>
 								<p class="card-menu__details">Revisité</p>
@@ -168,9 +158,7 @@
 						</ul>
 					</li>
 				</ul>
-				<div class="order-menu">
-					<button type="submit" class="btn btn--large">Commander</button>
-				</div>
+				<button type="submit" class="btn btn--large">Commander</button>
 			</section>
 		</main>
 		<footer>

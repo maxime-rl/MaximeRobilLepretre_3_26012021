@@ -364,11 +364,6 @@ body {
   font-family: $content-font;
   background-color: setcolor(grey, light);
   scroll-behavior: smooth;
-  /* large screen security wrapper */
-  @include breakpoint(xl) {
-    max-width: $layout-wrapper;
-    margin: $layout-margin;
-  }
 }
 
 h1,

@@ -1,13 +1,15 @@
 .btn {
   position: relative;
+  display: block;
   z-index: 1;
-  border: none;
-  cursor: pointer;
-  color: $color-white;
+  margin: auto;
   padding: $all-padding;
+  border: none;
+  color: $color-white;
   border-radius: $radius-button;
   background: $gradient;
   box-shadow: $shadow-button;
+  cursor: pointer;
 
   &::after {
     content: '';

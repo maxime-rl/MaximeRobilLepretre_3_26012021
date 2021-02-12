@@ -1,0 +1,25 @@
+nav {
+  @include flex-center;
+  position: relative;
+  height: 6rem;
+  left: 0;
+  padding: 0 1.5rem;
+  background-color: $color-white;
+  box-shadow: 0 1px 10px 0 #c4c4c4;
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .logo {
+      display: block;
+      margin: auto;
+    }
+    // large screen security wrapper
+    @include breakpoint(xl) {
+      max-width: $layout-wrapper;
+      margin: $layout-margin;
+    }
+  }
+}
