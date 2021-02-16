@@ -1,4 +1,5 @@
-nav {
+nav,
+.home-page-header {
   @include flex-center;
   position: relative;
   height: 6rem;
