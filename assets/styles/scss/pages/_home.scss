@@ -2,13 +2,26 @@
 /************** section-localisation **************/
 /**************************************************/
 
-.section-localisation {
+.search-localisation {
   @include flex-center;
-  padding: 0 1.5rem 0 0;
+  padding: 0 0 0 4.7rem;
+  height: 4.5rem;
   font-size: 1.5rem;
   font-weight: 700;
   background-color: setcolor(grey, base);
   color: setcolor(grey, dark);
+
+  input {
+    outline: 0;
+    border: 0;
+    background-color: #eaeaea;
+
+    &::placeholder {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $color-text;
+    }
+  }
 
   .icon-localisation {
     padding-right: $all-padding;
