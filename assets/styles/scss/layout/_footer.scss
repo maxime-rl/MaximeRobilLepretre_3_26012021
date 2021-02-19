@@ -5,13 +5,13 @@ footer {
  .footer-list {
     font-size: 1.4rem;
     line-height: 2.5rem;
+  }
 
-    a {
-      color: $color-white;
+  a {
+    color: $color-white;
 
-      &:hover {
-        text-decoration: underline;
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
 

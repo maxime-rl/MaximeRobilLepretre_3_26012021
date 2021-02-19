@@ -8,19 +8,20 @@ nav,
   background-color: $color-white;
   box-shadow: 0 1px 10px 0 #c4c4c4;
 
-  .nav-links {
+  a {
     display: flex;
     align-items: center;
     width: 100%;
 
-    .logo {
-      display: block;
-      margin: auto;
-    }
     // large screen security wrapper
     @include breakpoint(xl) {
       max-width: $layout-wrapper;
       margin: $layout-margin;
     }
+  }
+
+  img {
+    display: block;
+    margin: auto;
   }
 }
