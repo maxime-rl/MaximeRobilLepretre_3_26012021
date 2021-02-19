@@ -2,7 +2,7 @@
 /************** section-localisation **************/
 /**************************************************/
 
-.search-localisation {
+form {
   @include flex-center;
   padding: 0 0 0 4.7rem;
   height: 4.5rem;
@@ -23,7 +23,7 @@
     }
   }
 
-  .icon-localisation {
+  i {
     padding-right: $all-padding;
     padding-bottom: 0.45rem;
   }
@@ -285,6 +285,3 @@
     padding: 0.5rem;
   }
 }
-
-
-
