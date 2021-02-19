@@ -55,23 +55,23 @@ $breakpoints: (
 @mixin number-tuto-card {
   position: absolute;
   @include flex-center;
+  margin-top: 1.3rem;
+  border-radius: 50%;
   width: 21px;
   height: 21px;
   left: 1.5rem;
-  margin-top: 0.6rem;
-  border-radius: 50%;
   background-color: $color-primary;
   color: $color-white;
   font-size: 1.2rem;
 
   @include breakpoint(md) {
     position: relative;
-    left: -1.5rem;
     margin-top: 0;
+    left: -1.5rem;
   }
 
   @include breakpoint(lg) {
-    left: -2.5rem;
     margin-top: 0;
+    left: -2.5rem;
   }
 }
